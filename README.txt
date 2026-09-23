@@ -3,15 +3,15 @@ RETIRA — Retirement Income Planning Website
 
 A responsive front-end prototype inspired by modern financial-planning/client-portal patterns, including eMoney's client portal, My Plan and advisor experience.
 
-Pages (10 or fewer):
+Pages:
 - index.html      Main marketing home
 - home.html       Alternate client-focused home
-- services.html  Services
-- advisors.html  Advisors
-- resources.html Resources
-- login.html     Login form (submits to index.html)
-- signup.html    Signup form (submits to index.html)
-- dashboard.html Client dashboard (Logout returns to index.html)
+- services.html  Services & Resources (combined)
+- about.html     About Us
+- contact.html   Contact Us with integrated map
+- login.html     Login form
+- signup.html    Signup form
+- dashboard.html Client dashboard
 - styles.css
 - script.js
 
