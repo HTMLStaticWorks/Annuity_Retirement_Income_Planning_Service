@@ -317,10 +317,11 @@
     <aside class="sidebar">
       <div class="side-brand">RETIRA PORTAL</div>
       <nav class="side-links">
-        <a class="active" href="dashboard.html">⌂ Overview</a>
-        <a href="#plan">◫ Planning</a>
-        <a href="#accounts">▣ Assets</a>
-        <a href="#advisor">◎ Advisor</a>
+        <a class="active" href="#overview" data-dash-target="overview">⌂ Overview</a>
+        <a href="#plan" data-dash-target="plan">◫ Planning</a>
+        <a href="#accounts" data-dash-target="accounts">▣ Assets & Accounts</a>
+        <a href="#income" data-dash-target="income">🪙 Income Streams</a>
+        <a href="#advisor" data-dash-target="advisor">◎ Advisor & Support</a>
         <a href="index.html">↪ Logout</a>
       </nav>
 
@@ -332,66 +333,141 @@
         <strong style="color: white; display: block; font-size: 0.95rem;">Sarah Johnson, CFP®</strong>
         <p style="color: #a4b9b4; font-size: 0.8rem; margin: 4px 0 10px;">Senior Retirement Specialist</p>
         <button type="button" class="btn btn-soft btn-sm"
-          style="width: 100%; text-align: center; justify-content: center;" onclick="showModal('scheduleModal')">Book
-          Review</button>
+          style="width: 100%; text-align: center; justify-content: center;" onclick="showModal('scheduleModal')">Book Review</button>
       </div>
     </aside>
 
     <!-- Main Content Area -->
     <section class="dash-main">
-      <!-- Greeting & Actions -->
-      <div class="dash-top">
-        <div>
-          <div class="eyebrow">CLIENT DASHBOARD</div>
-          <h1 style="font-size: 2.6rem;">Good morning, Alex.</h1>
-          <p class="lead">Your retirement income plan is active. All guaranteed annuity payouts are on schedule.</p>
-        </div>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <button type="button" class="btn btn-primary" onclick="showModal('addAccountModal')">+ Link Account</button>
-          <button type="button" class="btn btn-soft"
-            onclick="showToast('📄 Generating consolidated PDF statement...')">📄 Export Report</button>
-          <button type="button" class="btn btn-gold" onclick="showModal('scheduleModal')">📅 Schedule Review</button>
-        </div>
-      </div>
 
-      <!-- Top Metrics & Readiness Grid -->
-      <div class="dash-grid">
-        <div class="dash-card">
-          <span class="kicker">PLAN READINESS SCORE</span>
-          <div class="big">86%</div>
-          <div class="progress" style="margin: 8px 0;"><span style="width:86%"></span></div>
-          <small style="color: var(--green); font-weight: 700;">On track for 2036 target</small>
-        </div>
-
-        <div class="dash-card">
-          <span class="kicker">PROJECTED MONTHLY INCOME</span>
-          <div class="big">$8,450 <small style="font-size: 1rem; font-weight: 600;">/ mo</small></div>
-          <div style="margin-top: 6px;">
-            <span class="tag" style="background: rgba(45,114,91,0.15); color: var(--green);">+ $450 vs target</span>
+      <!-- SECTION 1: OVERVIEW -->
+      <div class="dash-section active" data-dash-section="overview">
+        <!-- Greeting & Actions -->
+        <div class="dash-top">
+          <div>
+            <div class="eyebrow">CLIENT DASHBOARD · OVERVIEW</div>
+            <h1 style="font-size: 2.5rem;">Good morning, Alex.</h1>
+            <p class="lead">Your retirement income plan is active. All guaranteed annuity payouts are on schedule.</p>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button type="button" class="btn btn-primary" onclick="showModal('addAccountModal')">+ Link Account</button>
+            <button type="button" class="btn btn-soft"
+              onclick="showToast('📄 Generating consolidated PDF statement...')">📄 Export Report</button>
+            <button type="button" class="btn btn-gold" onclick="showModal('scheduleModal')">📅 Schedule Review</button>
           </div>
         </div>
 
-        <div class="dash-card">
-          <span class="kicker">TOTAL RETIREMENT ASSETS</span>
-          <div class="big">$1.42M</div>
-          <small style="color: var(--muted); font-weight: 600;">Updated today · 3 accounts</small>
+        <!-- Top Metrics Grid -->
+        <div class="dash-grid">
+          <div class="dash-card">
+            <span class="kicker">PLAN READINESS SCORE</span>
+            <div class="big">86%</div>
+            <div class="progress" style="margin: 8px 0;"><span style="width:86%"></span></div>
+            <small style="color: var(--green); font-weight: 700;">On track for 2036 target</small>
+          </div>
+
+          <div class="dash-card">
+            <span class="kicker">PROJECTED MONTHLY INCOME</span>
+            <div class="big">$8,450 <small style="font-size: 1rem; font-weight: 600;">/ mo</small></div>
+            <div style="margin-top: 6px;">
+              <span class="tag" style="background: rgba(45,114,91,0.15); color: var(--green);">+ $450 vs target</span>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <span class="kicker">TOTAL RETIREMENT ASSETS</span>
+            <div class="big">$1.42M</div>
+            <small style="color: var(--muted); font-weight: 600;">Updated today · 3 accounts</small>
+          </div>
+
+          <div class="dash-card">
+            <span class="kicker">RETIREMENT TARGET YEAR</span>
+            <div class="big">2036 <small style="font-size: 1rem; font-weight: 600;">(Age 65)</small></div>
+            <small style="color: var(--muted); font-weight: 600;">10 years, 3 months remaining</small>
+          </div>
         </div>
 
-        <div class="dash-card">
-          <span class="kicker">RETIREMENT TARGET YEAR</span>
-          <div class="big">2036 <small style="font-size: 1rem; font-weight: 600;">(Age 65)</small></div>
-          <small style="color: var(--muted); font-weight: 600;">10 years, 3 months remaining</small>
+        <!-- Executive Summary Cards Grid -->
+        <div class="dash-layout" style="margin-top: 22px;">
+          <div class="card">
+            <div class="section-head" style="margin-bottom: 14px;">
+              <div>
+                <div class="eyebrow">PORTAL HIGHLIGHTS</div>
+                <h2 style="font-size: 1.6rem;">Executive Plan Summary</h2>
+              </div>
+              <span class="tag">Active Status</span>
+            </div>
+            <p style="color: var(--muted); margin-bottom: 18px;">Your portfolio is structured across fixed guaranteed annuities, government benefits, and investment portfolios to ensure uninterrupted lifetime income.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;">
+              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);" onclick="switchDashTab('plan')">
+                <div class="eyebrow" style="margin-bottom: 4px;">PROJECTION MODEL</div>
+                <strong style="display: block; font-size: 1.05rem;">30-Year Planning →</strong>
+                <small style="color: var(--muted);">Explore income projections & inflation riders</small>
+              </div>
+              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);" onclick="switchDashTab('accounts')">
+                <div class="eyebrow" style="margin-bottom: 4px;">CONSOLIDATED ASSETS</div>
+                <strong style="display: block; font-size: 1.05rem;">$1.42M Balances →</strong>
+                <small style="color: var(--muted);">Review Fidelity, Vanguard & Schwab accounts</small>
+              </div>
+              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);" onclick="switchDashTab('income')">
+                <div class="eyebrow" style="margin-bottom: 4px;">ANNUITY VAULT</div>
+                <strong style="display: block; font-size: 1.05rem;">$8,450/mo Payouts →</strong>
+                <small style="color: var(--muted);">Social Security, Fixed Annuities & Pension</small>
+              </div>
+              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);" onclick="switchDashTab('advisor')">
+                <div class="eyebrow" style="margin-bottom: 4px;">ADVISOR CORNER</div>
+                <strong style="display: block; font-size: 1.05rem;">Sarah Johnson, CFP® →</strong>
+                <small style="color: var(--muted);">Upcoming Review on Sep 28 & Direct Messaging</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="eyebrow">PLAN NOTIFICATIONS</div>
+            <h3 style="font-size: 1.35rem; margin-bottom: 12px;">Recent Updates</h3>
+            <div class="list">
+              <div class="list-item">
+                <div>
+                  <strong>Annual Review Scheduled</strong>
+                  <small style="display: block; color: var(--muted);">Sep 28, 2026 · Virtual Conference</small>
+                </div>
+                <span class="tag">Upcoming</span>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>August Statement Ready</strong>
+                  <small style="display: block; color: var(--muted);">Consolidated PDF report generated</small>
+                </div>
+                <button type="button" class="btn btn-soft btn-sm" onclick="showToast('Downloading August 2026 Statement...')">View</button>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>Annuity Payout Lock</strong>
+                  <small style="display: block; color: var(--muted);">Rate 5.45% APY active</small>
+                </div>
+                <span class="tag" style="background: rgba(45,114,91,0.15); color: var(--green);">Locked</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Section 1: Chart & Advisor Space -->
-      <div class="dash-layout">
-        <!-- Retirement Projection Chart -->
-        <div class="card" id="plan">
+      <!-- SECTION 2: PLANNING -->
+      <div class="dash-section" data-dash-section="plan">
+        <div class="dash-top">
+          <div>
+            <div class="eyebrow">RETIREMENT PLANNING & PROJECTIONS</div>
+            <h1 style="font-size: 2.4rem;">30-Year Income Projection Model</h1>
+            <p class="lead">Visualize your guaranteed payouts and variable growth from now through age 90+.</p>
+          </div>
+        </div>
+
+        <div class="card" id="plan-card">
           <div class="section-head" style="margin-bottom: 14px;">
             <div>
               <div class="eyebrow">PROJECTION MODEL</div>
-              <h2 style="font-size: 1.65rem;">30-Year Income & Capital Projection</h2>
+              <h2 style="font-size: 1.65rem;">Income Growth & Inflation Adjustment</h2>
             </div>
             <span class="tag">On Track</span>
           </div>
@@ -501,271 +577,301 @@
             projected core living expenses of $5,800/mo.
           </div>
         </div>
-
-        <!-- Advisor Space Card -->
-        <div class="card" id="advisor">
-          <div class="eyebrow">DEDICATED ADVISOR</div>
-          <h3 style="font-size: 1.35rem; margin-bottom: 6px;">Annual Plan Review</h3>
-
-          <div class="advisor-profile-box">
-            <div class="advisor-avatar-lg">SJ</div>
-            <div>
-              <strong style="display: block; font-size: 1rem; color: var(--ink);">Sarah Johnson, CFP®</strong>
-              <small style="color: var(--muted);">Senior Retirement & Annuity Specialist</small>
-            </div>
-          </div>
-
-          <div
-            style="margin: 16px 0; padding: 14px; background: var(--paper); border-radius: 14px; border: 1px solid var(--line);">
-            <div style="font-size: 0.82rem; color: var(--muted); font-weight: 700;">NEXT UPCOMING MEETING</div>
-            <strong style="display: block; font-size: 0.98rem; margin-top: 4px; color: var(--ink);">Sep 28, 2026 · 10:00
-              AM EST</strong>
-            <small style="color: var(--green); font-weight: 600;">📹 Virtual HD Video Conference</small>
-          </div>
-
-          <a class="btn btn-primary" href="services.html#advisors"
-            style="width: 100%; padding: 12px; text-align: center; justify-content: center; margin-bottom: 8px;">Join
-            Video Meeting Room</a>
-          <button type="button" class="btn btn-soft"
-            style="width: 100%; text-align: center; justify-content: center; margin-bottom: 8px;"
-            onclick="showModal('scheduleModal')">Reschedule Meeting</button>
-          <button type="button" class="btn btn-soft" style="width: 100%; text-align: center; justify-content: center;"
-            onclick="showToast('💬 Opening direct secure advisor chat...')">💬 Send Note to Sarah</button>
-        </div>
       </div>
 
-      <!-- Section 2: Income Stream & Annuities -->
-      <div class="dash-layout">
-        <!-- Monthly Income Stream Breakdown -->
-        <div class="card" id="income">
-          <div class="eyebrow">INCOME SOURCES</div>
-          <h2 style="font-size: 1.65rem; margin-bottom: 16px;">Monthly Income Breakdown</h2>
-
-          <div class="list">
-            <div class="list-item">
-              <div>
-                <strong style="display: block;">Social Security Benefit</strong>
-                <small style="color: var(--muted);">Claiming at Age 67</small>
-              </div>
-              <div style="text-align: right;">
-                <strong style="font-size: 1.05rem;">$2,800/mo</strong>
-                <div><span class="tag">Govt Guaranteed</span></div>
-              </div>
-            </div>
-
-            <div class="list-item">
-              <div>
-                <strong style="display: block;">Retira Fixed Lifetime Annuity</strong>
-                <strong style="color: var(--green); font-size: 0.8rem;">Contract #AT-88492</strong>
-              </div>
-              <div style="text-align: right;">
-                <strong style="font-size: 1.05rem;">$2,250/mo</strong>
-                <div><span class="tag">Insurance Locked</span></div>
-              </div>
-            </div>
-
-            <div class="list-item">
-              <div>
-                <strong style="display: block;">Vested Corporate Pension</strong>
-                <small style="color: var(--muted);">Lifetime Single-Life Option</small>
-              </div>
-              <div style="text-align: right;">
-                <strong style="font-size: 1.05rem;">$1,600/mo</strong>
-                <div><span class="tag">Pension Vested</span></div>
-              </div>
-            </div>
-
-            <div class="list-item">
-              <div>
-                <strong style="display: block;">Investment Portfolio Systematic Withdrawal</strong>
-                <small style="color: var(--muted);">Based on conservative 4% rule</small>
-              </div>
-              <div style="text-align: right;">
-                <strong style="font-size: 1.05rem;">$1,800/mo</strong>
-                <div><span class="tag" style="background: #fff3cd; color: #856404;">Variable</span></div>
-              </div>
-            </div>
-
-            <div class="list-item"
-              style="border-bottom: none; background: var(--sage); padding: 14px 16px; border-radius: 14px; margin-top: 10px;">
-              <div>
-                <strong style="font-size: 1.1rem; color: var(--green);">Total Projected Income</strong>
-                <small style="display: block; color: var(--muted);">Combined monthly payout</small>
-              </div>
-              <div style="text-align: right;">
-                <strong style="font-size: 1.35rem; color: var(--green);">$8,450/mo</strong>
-              </div>
-            </div>
-          </div>
-
-          <button type="button" class="btn btn-soft"
-            style="width: 100%; margin-top: 16px; text-align: center; justify-content: center;"
-            onclick="showToast('Opening custom income scenario builder...')">+ Model Custom Income Source</button>
-        </div>
-
-        <!-- Annuity Contracts Card -->
-        <div class="card" id="annuities">
-          <div class="eyebrow">ANNUITY VAULT</div>
-          <h3 style="font-size: 1.35rem;">Lifetime Income Annuity</h3>
-
-          <div
-            style="margin: 14px 0; padding: 16px; background: var(--cream); border-radius: 14px; border: 1px solid var(--line);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-              <small style="color: var(--muted); font-weight: 700;">POLICY DETAILS</small>
-              <span class="tag">Active</span>
-            </div>
-            <div style="font-size: 0.9rem; line-height: 1.7;">
-              <div>Policy Number: <strong>AT-8849210-X</strong></div>
-              <div>Income Begin Date: <strong>Jan 15, 2036</strong></div>
-              <div>Guaranteed Payout Rate: <strong>5.45% APY Lock</strong></div>
-              <div>Guaranteed Payout: <strong style="color: var(--green); font-size: 1.05rem;">$2,250 / mo for
-                  life</strong></div>
-              <div>Annual COLA Adjustment: <strong>+ 3% Inflation Rider</strong></div>
-            </div>
-          </div>
-
-          <button type="button" class="btn btn-primary"
-            style="width: 100%; text-align: center; justify-content: center; margin-bottom: 8px;"
-            onclick="showToast('📄 Opening Annuity Master Policy PDF...')">View Contract PDF</button>
-          <button type="button" class="btn btn-soft" style="width: 100%; text-align: center; justify-content: center;"
-            onclick="showToast('Requesting rider summary from insurance provider...')">Request Rider Summary</button>
-        </div>
-      </div>
-
-      <!-- Section 3: Accounts Table -->
-      <div class="card" id="accounts" style="margin-top: 22px;">
-        <div class="section-head" style="margin-bottom: 16px;">
+      <!-- SECTION 3: ASSETS & ACCOUNTS -->
+      <div class="dash-section" data-dash-section="accounts">
+        <div class="dash-top">
           <div>
-            <div class="eyebrow">ASSET CONSOLIDATION</div>
-            <h2 style="font-size: 1.65rem;">Linked Accounts & Portfolio Balances</h2>
+            <div class="eyebrow">PORTFOLIO CONSOLIDATION</div>
+            <h1 style="font-size: 2.4rem;">Linked Accounts & Asset Balances</h1>
+            <p class="lead">View real-time aggregated balances across IRA, 401(k), and brokerage accounts.</p>
           </div>
-          <span class="tag">Real-Time Sync</span>
+          <button type="button" class="btn btn-primary" onclick="showModal('addAccountModal')">+ Link Financial Institution</button>
         </div>
 
-        <div class="table-wrap">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Account Name</th>
-                <th>Institution</th>
-                <th>Type</th>
-                <th>Balance</th>
-                <th>Strategy</th>
-                <th>Last Sync</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Traditional IRA</strong></td>
-                <td>Fidelity Investments</td>
-                <td>Tax-Deferred IRA</td>
-                <td><strong style="color: var(--green); font-size: 1.05rem;">$640,000</strong></td>
-                <td>Growth & Income</td>
-                <td>Today, 09:30 AM</td>
-                <td><button type="button" class="btn btn-soft btn-sm"
-                    onclick="showToast('Fetching Fidelity account details...')">Details</button></td>
-              </tr>
-              <tr>
-                <td><strong>401(k) Rollover</strong></td>
-                <td>Vanguard</td>
-                <td>Qualified Plan</td>
-                <td><strong style="color: var(--green); font-size: 1.05rem;">$510,000</strong></td>
-                <td>Target Date 2035</td>
-                <td>Today, 09:30 AM</td>
-                <td><button type="button" class="btn btn-soft btn-sm"
-                    onclick="showToast('Fetching Vanguard account details...')">Details</button></td>
-              </tr>
-              <tr>
-                <td><strong>Taxable Brokerage</strong></td>
-                <td>Charles Schwab</td>
-                <td>Individual Taxable</td>
-                <td><strong style="color: var(--green); font-size: 1.05rem;">$270,000</strong></td>
-                <td>Dividend & Liquidity</td>
-                <td>Yesterday</td>
-                <td><button type="button" class="btn btn-soft btn-sm"
-                    onclick="showToast('Fetching Schwab account details...')">Details</button></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div
-          style="display: flex; justify-content: space-between; align-items: center; margin-top: 18px; border-top: 1px solid var(--line); flex-wrap: wrap; gap: 12px;">
-          <div>
-            <span style="color: var(--muted); font-weight: 600;">Consolidated Portfolio Total:</span>
-            <strong style="font-size: 1.25rem; color: var(--ink); margin-left: 8px;">$1,420,000</strong>
+        <div class="card">
+          <div class="section-head" style="margin-bottom: 16px;">
+            <div>
+              <div class="eyebrow">ASSET CONSOLIDATION</div>
+              <h2 style="font-size: 1.65rem;">Connected Financial Accounts</h2>
+            </div>
+            <span class="tag">Real-Time Sync</span>
           </div>
-          <button type="button" class="btn btn-primary btn-sm" onclick="showModal('addAccountModal')">+ Link Another
-            Financial Institution</button>
-        </div>
-      </div>
 
-      <!-- Section 4: Legacy & Documents -->
-      <div class="dash-layout" style="margin-top: 22px;">
-        <!-- Legacy & Estate -->
-        <div class="card" id="legacy">
-          <div class="eyebrow">ESTATE & LEGACY</div>
-          <h3 style="font-size: 1.35rem;">Beneficiary Designations</h3>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Account Name</th>
+                  <th>Institution</th>
+                  <th>Type</th>
+                  <th>Balance</th>
+                  <th>Strategy</th>
+                  <th>Last Sync</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Traditional IRA</strong></td>
+                  <td>Fidelity Investments</td>
+                  <td>Tax-Deferred IRA</td>
+                  <td><strong style="color: var(--green); font-size: 1.05rem;">$640,000</strong></td>
+                  <td>Growth & Income</td>
+                  <td>Today, 09:30 AM</td>
+                  <td><button type="button" class="btn btn-soft btn-sm"
+                      onclick="showToast('Fetching Fidelity account details...')">Details</button></td>
+                </tr>
+                <tr>
+                  <td><strong>401(k) Rollover</strong></td>
+                  <td>Vanguard</td>
+                  <td>Qualified Plan</td>
+                  <td><strong style="color: var(--green); font-size: 1.05rem;">$510,000</strong></td>
+                  <td>Target Date 2035</td>
+                  <td>Today, 09:30 AM</td>
+                  <td><button type="button" class="btn btn-soft btn-sm"
+                      onclick="showToast('Fetching Vanguard account details...')">Details</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Taxable Brokerage</strong></td>
+                  <td>Charles Schwab</td>
+                  <td>Individual Taxable</td>
+                  <td><strong style="color: var(--green); font-size: 1.05rem;">$270,000</strong></td>
+                  <td>Dividend & Liquidity</td>
+                  <td>Yesterday</td>
+                  <td><button type="button" class="btn btn-soft btn-sm"
+                      onclick="showToast('Fetching Schwab account details...')">Details</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <div
-            style="margin: 14px 0; padding: 16px; background: var(--cream); border-radius: 14px; border: 1px solid var(--line); font-size: 0.9rem; line-height: 1.7;">
-            <div>Primary Beneficiary: <strong style="color: var(--green);">Jane Vance (Spouse) — 100%
-                Allocation</strong></div>
-            <div>Contingent Beneficiary: <strong style="color: var(--danger);">⚠️ Needs Review (Unassigned)</strong>
-            </div>
-            <div>Estate Will Status: <strong>Updated July 2024</strong></div>
-          </div>
-
-          <button type="button" class="btn btn-primary"
-            style="width: 100%; text-align: center; justify-content: center;"
-            onclick="showModal('beneficiaryModal')">Update Beneficiary Designation</button>
-        </div>
-
-        <!-- Document Vault -->
-        <div class="card" id="documents">
-          <div class="section-head" style="margin-bottom: 12px;">
+            style="display: flex; justify-content: space-between; align-items: center; margin-top: 18px; border-top: 1px solid var(--line); flex-wrap: wrap; gap: 12px; padding-top: 16px;">
             <div>
-              <div class="eyebrow">DOCUMENT VAULT</div>
-              <h3 style="font-size: 1.35rem;">Recent Statements</h3>
+              <span style="color: var(--muted); font-weight: 600;">Consolidated Portfolio Total:</span>
+              <strong style="font-size: 1.25rem; color: var(--ink); margin-left: 8px;">$1,420,000</strong>
             </div>
-            <span class="tag">256-Bit Encrypted</span>
+            <button type="button" class="btn btn-primary btn-sm" onclick="showModal('addAccountModal')">+ Link Another
+              Financial Institution</button>
           </div>
-
-          <div class="list">
-            <div class="list-item">
-              <div>
-                <strong>2026 Annuity Master Policy.pdf</strong>
-                <small style="display: block; color: var(--muted);">1.4 MB · Issued Aug 2026</small>
-              </div>
-              <button type="button" class="btn btn-soft btn-sm"
-                onclick="showToast('Downloading 2026 Annuity Master Policy.pdf...')">Download</button>
-            </div>
-
-            <div class="list-item">
-              <div>
-                <strong>August 2026 Consolidated Statement.pdf</strong>
-                <small style="display: block; color: var(--muted);">820 KB · Issued Sep 2026</small>
-              </div>
-              <button type="button" class="btn btn-soft btn-sm"
-                onclick="showToast('Downloading August 2026 Consolidated Statement.pdf...')">Download</button>
-            </div>
-
-            <div class="list-item">
-              <div>
-                <strong>Retirement Income Plan Blueprint.pdf</strong>
-                <small style="display: block; color: var(--muted);">3.2 MB · Issued Jul 2026</small>
-              </div>
-              <button type="button" class="btn btn-soft btn-sm"
-                onclick="showToast('Downloading Retirement Income Plan Blueprint.pdf...')">Download</button>
-            </div>
-          </div>
-
-          <button type="button" class="btn btn-soft"
-            style="width: 100%; margin-top: 14px; text-align: center; justify-content: center;"
-            onclick="showToast('Opening secure document uploader...')">⬆ Upload Document to Vault</button>
         </div>
       </div>
+
+      <!-- SECTION 4: INCOME STREAMS & ANNUITIES -->
+      <div class="dash-section" data-dash-section="income">
+        <div class="dash-top">
+          <div>
+            <div class="eyebrow">INCOME VAULT</div>
+            <h1 style="font-size: 2.4rem;">Monthly Income Breakdown & Annuities</h1>
+            <p class="lead">Consolidated view of lifetime guaranteed annuities, pension plans, and Social Security.</p>
+          </div>
+        </div>
+
+        <div class="dash-layout">
+          <!-- Monthly Income Stream Breakdown -->
+          <div class="card">
+            <div class="eyebrow">INCOME SOURCES</div>
+            <h2 style="font-size: 1.65rem; margin-bottom: 16px;">Monthly Income Breakdown</h2>
+
+            <div class="list">
+              <div class="list-item">
+                <div>
+                  <strong style="display: block;">Social Security Benefit</strong>
+                  <small style="color: var(--muted);">Claiming at Age 67</small>
+                </div>
+                <div style="text-align: right;">
+                  <strong style="font-size: 1.05rem;">$2,800/mo</strong>
+                  <div><span class="tag">Govt Guaranteed</span></div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div>
+                  <strong style="display: block;">Retira Fixed Lifetime Annuity</strong>
+                  <strong style="color: var(--green); font-size: 0.8rem;">Contract #AT-88492</strong>
+                </div>
+                <div style="text-align: right;">
+                  <strong style="font-size: 1.05rem;">$2,250/mo</strong>
+                  <div><span class="tag">Insurance Locked</span></div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div>
+                  <strong style="display: block;">Vested Corporate Pension</strong>
+                  <small style="color: var(--muted);">Lifetime Single-Life Option</small>
+                </div>
+                <div style="text-align: right;">
+                  <strong style="font-size: 1.05rem;">$1,600/mo</strong>
+                  <div><span class="tag">Pension Vested</span></div>
+                </div>
+              </div>
+
+              <div class="list-item">
+                <div>
+                  <strong style="display: block;">Investment Portfolio Systematic Withdrawal</strong>
+                  <small style="color: var(--muted);">Based on conservative 4% rule</small>
+                </div>
+                <div style="text-align: right;">
+                  <strong style="font-size: 1.05rem;">$1,800/mo</strong>
+                  <div><span class="tag" style="background: #fff3cd; color: #856404;">Variable</span></div>
+                </div>
+              </div>
+
+              <div class="list-item"
+                style="border-bottom: none; background: var(--sage); padding: 14px 16px; border-radius: 14px; margin-top: 10px;">
+                <div>
+                  <strong style="font-size: 1.1rem; color: var(--green);">Total Projected Income</strong>
+                  <small style="display: block; color: var(--muted);">Combined monthly payout</small>
+                </div>
+                <div style="text-align: right;">
+                  <strong style="font-size: 1.35rem; color: var(--green);">$8,450/mo</strong>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-soft"
+              style="width: 100%; margin-top: 16px; text-align: center; justify-content: center;"
+              onclick="showToast('Opening custom income scenario builder...')">+ Model Custom Income Source</button>
+          </div>
+
+          <!-- Annuity Contracts Card -->
+          <div class="card">
+            <div class="eyebrow">ANNUITY VAULT</div>
+            <h3 style="font-size: 1.35rem;">Lifetime Income Annuity</h3>
+
+            <div
+              style="margin: 14px 0; padding: 16px; background: var(--cream); border-radius: 14px; border: 1px solid var(--line);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <small style="color: var(--muted); font-weight: 700;">POLICY DETAILS</small>
+                <span class="tag">Active</span>
+              </div>
+              <div style="font-size: 0.9rem; line-height: 1.7;">
+                <div>Policy Number: <strong>AT-8849210-X</strong></div>
+                <div>Income Begin Date: <strong>Jan 15, 2036</strong></div>
+                <div>Guaranteed Payout Rate: <strong>5.45% APY Lock</strong></div>
+                <div>Guaranteed Payout: <strong style="color: var(--green); font-size: 1.05rem;">$2,250 / mo for life</strong></div>
+                <div>Annual COLA Adjustment: <strong>+ 3% Inflation Rider</strong></div>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary"
+              style="width: 100%; text-align: center; justify-content: center; margin-bottom: 8px;"
+              onclick="showToast('📄 Opening Annuity Master Policy PDF...')">View Contract PDF</button>
+            <button type="button" class="btn btn-soft" style="width: 100%; text-align: center; justify-content: center;"
+              onclick="showToast('Requesting rider summary from insurance provider...')">Request Rider Summary</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 5: ADVISOR & SUPPORT -->
+      <div class="dash-section" data-dash-section="advisor">
+        <div class="dash-top">
+          <div>
+            <div class="eyebrow">DEDICATED ADVISORY SUPPORT</div>
+            <h1 style="font-size: 2.4rem;">Advisor Consultation & Document Vault</h1>
+            <p class="lead">Connect directly with Sarah Johnson CFP® and manage your encrypted documents.</p>
+          </div>
+          <button type="button" class="btn btn-gold" onclick="showModal('scheduleModal')">📅 Schedule Consultation</button>
+        </div>
+
+        <div class="dash-layout">
+          <!-- Advisor Profile Card -->
+          <div class="card">
+            <div class="eyebrow">CERTIFIED FINANCIAL PLANNER®</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 6px;">Your Dedicated Specialist</h3>
+
+            <div class="advisor-profile-box">
+              <div class="advisor-avatar-lg">SJ</div>
+              <div>
+                <strong style="display: block; font-size: 1.1rem; color: var(--ink);">Sarah Johnson, CFP®</strong>
+                <small style="color: var(--muted);">Senior Retirement & Annuity Specialist · 14 yrs experience</small>
+              </div>
+            </div>
+
+            <div
+              style="margin: 16px 0; padding: 16px; background: var(--paper); border-radius: 14px; border: 1px solid var(--line);">
+              <div style="font-size: 0.82rem; color: var(--muted); font-weight: 700;">NEXT SCHEDULED CONSULTATION</div>
+              <strong style="display: block; font-size: 1.05rem; margin-top: 4px; color: var(--ink);">Sep 28, 2026 · 10:00 AM EST</strong>
+              <small style="color: var(--green); font-weight: 600;">📹 Virtual HD Video Conference</small>
+            </div>
+
+            <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;">
+              <a class="btn btn-primary" href="services.html#advisors" style="flex: 1; text-align: center; justify-content: center;">Join HD Video Room</a>
+              <button type="button" class="btn btn-soft" style="flex: 1; text-align: center; justify-content: center;"
+                onclick="showModal('scheduleModal')">Reschedule Meeting</button>
+            </div>
+
+            <!-- Send Direct Note to Advisor -->
+            <div style="margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line);">
+              <label style="font-size: 0.88rem; font-weight: 700; display: block; margin-bottom: 8px;">Send Secure Note to Sarah</label>
+              <textarea id="advisorNoteInput" rows="3" style="width: 100%; border: 1px solid var(--line); border-radius: 12px; padding: 10px; background: var(--cream); font-family: inherit; font-size: 0.9rem;" placeholder="Type your message or planning question here..."></textarea>
+              <button type="button" class="btn btn-primary btn-sm" style="margin-top: 8px;" onclick="sendAdvisorNote()">Send Note to Advisor</button>
+            </div>
+          </div>
+
+          <!-- Document Vault & Beneficiaries -->
+          <div>
+            <div class="card" style="margin-bottom: 18px;">
+              <div class="section-head" style="margin-bottom: 12px;">
+                <div>
+                  <div class="eyebrow">DOCUMENT VAULT</div>
+                  <h3 style="font-size: 1.35rem;">Recent Statements</h3>
+                </div>
+                <span class="tag">256-Bit Encrypted</span>
+              </div>
+
+              <div class="list">
+                <div class="list-item">
+                  <div>
+                    <strong>2026 Annuity Master Policy.pdf</strong>
+                    <small style="display: block; color: var(--muted);">1.4 MB · Issued Aug 2026</small>
+                  </div>
+                  <button type="button" class="btn btn-soft btn-sm"
+                    onclick="showToast('Downloading 2026 Annuity Master Policy.pdf...')">Download</button>
+                </div>
+
+                <div class="list-item">
+                  <div>
+                    <strong>August 2026 Consolidated Statement.pdf</strong>
+                    <small style="display: block; color: var(--muted);">820 KB · Issued Sep 2026</small>
+                  </div>
+                  <button type="button" class="btn btn-soft btn-sm"
+                    onclick="showToast('Downloading August 2026 Consolidated Statement.pdf...')">Download</button>
+                </div>
+
+                <div class="list-item">
+                  <div>
+                    <strong>Retirement Income Plan Blueprint.pdf</strong>
+                    <small style="display: block; color: var(--muted);">3.2 MB · Issued Jul 2026</small>
+                  </div>
+                  <button type="button" class="btn btn-soft btn-sm"
+                    onclick="showToast('Downloading Retirement Income Plan Blueprint.pdf...')">Download</button>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-soft"
+                style="width: 100%; margin-top: 14px; text-align: center; justify-content: center;"
+                onclick="showToast('Opening secure document uploader...')">⬆ Upload Document to Vault</button>
+            </div>
+
+            <div class="card">
+              <div class="eyebrow">ESTATE & LEGACY</div>
+              <h3 style="font-size: 1.35rem;">Beneficiary Designations</h3>
+
+              <div style="margin: 14px 0; padding: 14px; background: var(--cream); border-radius: 14px; border: 1px solid var(--line); font-size: 0.88rem; line-height: 1.6;">
+                <div>Primary: <strong style="color: var(--green);">Jane Vance (Spouse) — 100%</strong></div>
+                <div>Contingent: <strong style="color: var(--danger);">⚠️ Unassigned</strong></div>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; justify-content: center;" onclick="showModal('beneficiaryModal')">Update Beneficiaries</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
   </main>
 

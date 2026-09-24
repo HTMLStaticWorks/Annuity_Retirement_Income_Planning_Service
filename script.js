@@ -93,5 +93,77 @@ document.addEventListener("DOMContentLoaded", () => {
       links.style.zIndex = "100";
     });
   }
+
+  // 6. Dashboard Section Tab Switching
+  initDashboardTabs();
 });
+
+function switchDashTab(targetId) {
+  if (!targetId) targetId = "overview";
+  const sections = document.querySelectorAll(".dash-section");
+  const sideLinks = document.querySelectorAll(".side-links a[data-dash-target]");
+  if (!sections.length) return;
+
+  sections.forEach(sec => {
+    if (sec.getAttribute("data-dash-section") === targetId) {
+      sec.classList.add("active");
+    } else {
+      sec.classList.remove("active");
+    }
+  });
+
+  sideLinks.forEach(link => {
+    if (link.getAttribute("data-dash-target") === targetId) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+}
+
+function initDashboardTabs() {
+  const sideLinks = document.querySelectorAll(".side-links a[data-dash-target]");
+  const sections = document.querySelectorAll(".dash-section");
+  if (!sections.length) return;
+
+  sideLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("data-dash-target");
+      switchDashTab(targetId);
+      history.replaceState(null, null, "#" + targetId);
+    });
+  });
+
+  const hash = window.location.hash.replace("#", "");
+  if (hash && document.querySelector(`.dash-section[data-dash-section="${hash}"]`)) {
+    switchDashTab(hash);
+  } else {
+    switchDashTab("overview");
+  }
+
+  window.addEventListener("hashchange", () => {
+    const currentHash = window.location.hash.replace("#", "");
+    if (currentHash && document.querySelector(`.dash-section[data-dash-section="${currentHash}"]`)) {
+      switchDashTab(currentHash);
+    }
+  });
+}
+
+function sendAdvisorNote() {
+  const input = document.getElementById("advisorNoteInput");
+  if (input && input.value.trim() !== "") {
+    if (typeof showToast === "function") {
+      showToast("✓ Message sent securely to Sarah Johnson, CFP®!");
+    } else {
+      alert("✓ Message sent securely to Sarah Johnson, CFP®!");
+    }
+    input.value = "";
+  } else {
+    if (typeof showToast === "function") {
+      showToast("Please write a message before sending.");
+    }
+  }
+}
+
 
