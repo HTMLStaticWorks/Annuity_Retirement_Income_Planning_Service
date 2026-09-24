@@ -29,6 +29,24 @@
       border-bottom-color: rgba(29, 61, 53, 0.8);
     }
 
+    .dash-header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .dash-header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dash-desktop-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .dash-user-badge {
       display: flex;
       align-items: center;
@@ -61,11 +79,16 @@
       background: rgba(45, 114, 91, 0.1);
       border: 1px solid var(--line);
       color: var(--green);
-      display: grid;
-      place-items: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
       position: relative;
       transition: all 0.2s ease;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      vertical-align: middle;
+      font-size: 1.05rem;
     }
 
     .icon-btn:hover {
@@ -75,10 +98,10 @@
 
     .icon-badge {
       position: absolute;
-      top: 2px;
-      right: 2px;
-      width: 14px;
-      height: 14px;
+      top: -2px;
+      right: -2px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
       background: var(--danger);
       color: white;
@@ -86,6 +109,7 @@
       font-weight: 800;
       display: grid;
       place-items: center;
+      box-shadow: 0 0 0 2px var(--paper);
     }
 
     /* Interactive Chart Extensions */
