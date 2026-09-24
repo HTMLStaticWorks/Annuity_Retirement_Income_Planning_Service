@@ -311,44 +311,50 @@
           aria-label="Toggle RTL">RTL</button>
         <a href="index.html" class="btn btn-soft">Logout</a>
       </div>
-      <button class="mobile-toggle dash-mobile-toggle" id="dashMobileToggle" aria-label="Dashboard Menu">☰</button>
+
+      <div class="dash-mobile-top-btns">
+        <button type="button" class="theme-toggle-btn" data-action="toggle-theme" title="Toggle Theme">🌙</button>
+        <button class="mobile-toggle dash-mobile-toggle" id="dashMobileToggle" aria-label="Dashboard Menu">☰</button>
+      </div>
     </div>
 
-    <!-- Mobile Dashboard Hamburger Navigation Dropdown -->
+    <!-- Full-Screen Mobile Navigation Drawer -->
     <div class="dash-mobile-dropdown" id="dashMobileDropdown">
-      <div class="dash-mobile-user-card">
-        <span class="dash-avatar" style="width:36px; height:36px; font-size:0.9rem;">AV</span>
-        <div>
-          <strong style="display:block; font-size:0.98rem; color: var(--ink);">Alex Vance</strong>
-          <small style="color: var(--muted);">Client ID #8842</small>
+      <div class="dash-mobile-drawer-inner">
+        <div class="dash-mobile-user-card">
+          <span class="dash-avatar" style="width:42px; height:42px; font-size:1rem;">AV</span>
+          <div>
+            <strong style="display:block; font-size:1.02rem; color: var(--ink);">Alex Vance</strong>
+            <small style="color: var(--muted); font-size:0.85rem;">Client ID #8842 · Active Plan</small>
+          </div>
         </div>
-      </div>
 
-      <div class="dash-mobile-tabs">
-        <div class="dash-mobile-label">DASHBOARD NAVIGATION</div>
-        <a class="active" href="#overview" data-dash-target="overview">⌂ Overview</a>
-        <a href="#plan" data-dash-target="plan">◫ Planning</a>
-        <a href="#accounts" data-dash-target="accounts">▣ Assets & Accounts</a>
-        <a href="#income" data-dash-target="income">🪙 Income Streams</a>
-        <a href="#advisor" data-dash-target="advisor">◎ Advisor & Support</a>
-      </div>
-
-      <div class="dash-mobile-advisor">
-        <small style="color: var(--green); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">YOUR CFP® ADVISOR</small>
-        <strong style="color: var(--ink); display: block; font-size: 0.95rem;">Sarah Johnson, CFP®</strong>
-        <p style="color: var(--muted); font-size: 0.82rem; margin: 2px 0 10px;">Senior Retirement Specialist</p>
-        <button type="button" class="btn btn-soft btn-sm" style="width: 100%; justify-content: center;" onclick="showModal('scheduleModal')">Book Review</button>
-      </div>
-
-      <div class="dash-mobile-actions">
-        <div class="header-toggles">
-          <button type="button" class="icon-btn" style="flex:none;" onclick="showToast('🔔 Notifications: 1) Annual Review scheduled for Sep 28. 2) August statement ready.')" title="Notifications">
-            🔔 <span class="icon-badge">2</span>
-          </button>
-          <button type="button" class="theme-toggle-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">🌙</button>
-          <button type="button" class="rtl-toggle-btn" data-action="toggle-rtl" title="Toggle RTL Layout">RTL</button>
+        <div class="dash-mobile-tabs">
+          <div class="dash-mobile-label">PORTAL NAVIGATION</div>
+          <a class="active" href="#overview" data-dash-target="overview">⌂ Overview</a>
+          <a href="#plan" data-dash-target="plan">◫ Planning & Riders</a>
+          <a href="#accounts" data-dash-target="accounts">▣ Assets & Accounts</a>
+          <a href="#income" data-dash-target="income">🪙 Income Streams</a>
+          <a href="#advisor" data-dash-target="advisor">◎ Advisor & Support</a>
         </div>
-        <a href="index.html" class="btn btn-soft" style="width: 100%; justify-content: center; margin-top: 8px;">Logout</a>
+
+        <div class="dash-mobile-advisor">
+          <small style="color: var(--green); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">YOUR CFP® ADVISOR</small>
+          <strong style="color: var(--ink); display: block; font-size: 0.98rem;">Sarah Johnson, CFP®</strong>
+          <p style="color: var(--muted); font-size: 0.84rem; margin: 4px 0 12px;">Senior Retirement Specialist · Fiduciary Advisory</p>
+          <button type="button" class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="showModal('scheduleModal')">📅 Schedule Advisor Review</button>
+        </div>
+
+        <div class="dash-mobile-actions">
+          <div style="display:flex; gap:10px; align-items:center;">
+            <button type="button" class="icon-btn" style="flex:none; width:42px; height:42px;" onclick="showToast('🔔 Notifications: 1) Annual Review scheduled for Sep 28. 2) August statement ready.')" title="Notifications">
+              🔔 <span class="icon-badge">2</span>
+            </button>
+            <button type="button" class="theme-toggle-btn" data-action="toggle-theme" style="flex:1; height:42px; justify-content:center; border-radius:12px;">🌙 Theme</button>
+            <button type="button" class="rtl-toggle-btn" data-action="toggle-rtl" style="flex:1; height:42px; justify-content:center; border-radius:12px;">RTL</button>
+          </div>
+          <a href="index.html" class="btn btn-soft" style="width: 100%; justify-content: center; margin-top: 10px; height:44px; border-radius:12px;">↪ Sign Out of Portal</a>
+        </div>
       </div>
     </div>
   </header>
