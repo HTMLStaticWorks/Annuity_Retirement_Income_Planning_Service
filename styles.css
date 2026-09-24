@@ -1297,22 +1297,47 @@ h3 {
 
   .dash-header {
     padding: 0 16px;
+    position: relative;
+    z-index: 1000;
   }
 
   .dash-mobile-dropdown.open {
     display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
     flex-direction: column;
-    position: absolute;
-    top: 74px;
-    left: 12px;
-    right: 12px;
-    background: var(--paper);
+    position: fixed !important;
+    top: 74px !important;
+    left: 12px !important;
+    right: 12px !important;
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+    background: #ffffff !important;
     border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 20px;
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
-    z-index: 200;
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    z-index: 10000 !important;
     gap: 14px;
+    animation: dashDropdownFade 0.2s ease-out;
+  }
+
+  [data-theme="dark"] .dash-mobile-dropdown.open {
+    background: #132a32 !important;
+    border-color: #1d3d35;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  }
+
+  @keyframes dashDropdownFade {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .dash-mobile-user-card {
@@ -1349,13 +1374,13 @@ h3 {
 
   .dash-mobile-tabs a.active,
   .dash-mobile-tabs a:hover {
-    background: rgba(45, 114, 91, 0.1);
+    background: rgba(45, 114, 91, 0.12);
     color: var(--green);
     font-weight: 800;
   }
 
   .dash-mobile-advisor {
-    background: rgba(45, 114, 91, 0.05);
+    background: rgba(45, 114, 91, 0.06);
     border: 1px solid var(--line);
     border-radius: 14px;
     padding: 14px;
@@ -1364,6 +1389,41 @@ h3 {
   .dash-mobile-actions {
     border-top: 1px solid var(--line);
     padding-top: 12px;
+  }
+
+  .dash-mobile-tab-bar {
+    display: flex !important;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 6px 0 14px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+    scrollbar-width: none;
+  }
+
+  .dash-mobile-tab-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dash-mobile-tab-bar a {
+    white-space: nowrap;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .dash-mobile-tab-bar a.active,
+  .dash-mobile-tab-bar a:hover {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
   }
 
   .dash-grid {
