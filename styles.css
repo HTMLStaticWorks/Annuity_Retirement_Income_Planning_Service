@@ -1012,6 +1012,23 @@ h3 {
   margin-top: 5px
 }
 
+/* Dashboard Mobile Components Default Hidden State for Desktop */
+.dash-mobile-dropdown {
+  display: none !important;
+}
+
+.dash-mobile-top-btns {
+  display: none !important;
+}
+
+.dash-mobile-toggle {
+  display: none !important;
+}
+
+.dash-mobile-tab-bar {
+  display: none !important;
+}
+
 .dashboard-shell {
   display: grid;
   grid-template-columns: 240px 1fr;
