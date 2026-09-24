@@ -286,29 +286,70 @@
 
   <!-- Dashboard Top Header Bar -->
   <header class="dash-header">
-    <div style="display: flex; align-items: center; gap: 20px;">
+    <div class="dash-header-left">
       <a class="brand" href="index.html">
         <span class="brand-mark">R</span>Retira
       </a>
-      <div class="dash-user-badge">
+      <div class="dash-user-badge desktop-only-badge">
         <span class="dash-avatar">AV</span>
         <span>Alex Vance</span>
         <span style="color: var(--muted); font-weight: 500;">· Client ID #8842</span>
       </div>
     </div>
 
-    <div style="display: flex; align-items: center; gap: 12px;">
-      <button type="button" class="icon-btn"
-        onclick="showToast('🔔 Notifications: 1) Annual Review scheduled for Sep 28. 2) August statement ready.')"
-        title="Notifications" aria-label="Notifications">
-        🔔
-        <span class="icon-badge">2</span>
-      </button>
-      <button type="button" class="theme-toggle-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme"
-        aria-label="Toggle Theme">🌙</button>
-      <button type="button" class="rtl-toggle-btn" data-action="toggle-rtl" title="Toggle RTL Layout"
-        aria-label="Toggle RTL">RTL</button>
-      <a href="index.html" class="btn btn-soft">Logout</a>
+    <div class="dash-header-right">
+      <div class="dash-desktop-actions">
+        <button type="button" class="icon-btn"
+          onclick="showToast('🔔 Notifications: 1) Annual Review scheduled for Sep 28. 2) August statement ready.')"
+          title="Notifications" aria-label="Notifications">
+          🔔
+          <span class="icon-badge">2</span>
+        </button>
+        <button type="button" class="theme-toggle-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme"
+          aria-label="Toggle Theme">🌙</button>
+        <button type="button" class="rtl-toggle-btn" data-action="toggle-rtl" title="Toggle RTL Layout"
+          aria-label="Toggle RTL">RTL</button>
+        <a href="index.html" class="btn btn-soft">Logout</a>
+      </div>
+      <button class="mobile-toggle dash-mobile-toggle" id="dashMobileToggle" aria-label="Dashboard Menu">☰</button>
+    </div>
+
+    <!-- Mobile Dashboard Hamburger Navigation Dropdown -->
+    <div class="dash-mobile-dropdown" id="dashMobileDropdown">
+      <div class="dash-mobile-user-card">
+        <span class="dash-avatar" style="width:36px; height:36px; font-size:0.9rem;">AV</span>
+        <div>
+          <strong style="display:block; font-size:0.98rem; color: var(--ink);">Alex Vance</strong>
+          <small style="color: var(--muted);">Client ID #8842</small>
+        </div>
+      </div>
+
+      <div class="dash-mobile-tabs">
+        <div class="dash-mobile-label">DASHBOARD NAVIGATION</div>
+        <a class="active" href="#overview" data-dash-target="overview">⌂ Overview</a>
+        <a href="#plan" data-dash-target="plan">◫ Planning</a>
+        <a href="#accounts" data-dash-target="accounts">▣ Assets & Accounts</a>
+        <a href="#income" data-dash-target="income">🪙 Income Streams</a>
+        <a href="#advisor" data-dash-target="advisor">◎ Advisor & Support</a>
+      </div>
+
+      <div class="dash-mobile-advisor">
+        <small style="color: var(--green); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">YOUR CFP® ADVISOR</small>
+        <strong style="color: var(--ink); display: block; font-size: 0.95rem;">Sarah Johnson, CFP®</strong>
+        <p style="color: var(--muted); font-size: 0.82rem; margin: 2px 0 10px;">Senior Retirement Specialist</p>
+        <button type="button" class="btn btn-soft btn-sm" style="width: 100%; justify-content: center;" onclick="showModal('scheduleModal')">Book Review</button>
+      </div>
+
+      <div class="dash-mobile-actions">
+        <div class="header-toggles">
+          <button type="button" class="icon-btn" style="flex:none;" onclick="showToast('🔔 Notifications: 1) Annual Review scheduled for Sep 28. 2) August statement ready.')" title="Notifications">
+            🔔 <span class="icon-badge">2</span>
+          </button>
+          <button type="button" class="theme-toggle-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">🌙</button>
+          <button type="button" class="rtl-toggle-btn" data-action="toggle-rtl" title="Toggle RTL Layout">RTL</button>
+        </div>
+        <a href="index.html" class="btn btn-soft" style="width: 100%; justify-content: center; margin-top: 8px;">Logout</a>
+      </div>
     </div>
   </header>
 

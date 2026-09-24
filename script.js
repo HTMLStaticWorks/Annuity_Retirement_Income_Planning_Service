@@ -1,5 +1,18 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+  // 0. Clone Header Actions into Mobile Hamburger Menu Dropdown
+  const setupMobileNavActions = () => {
+    const navLinks = document.querySelector(".nav-links");
+    const navActions = document.querySelector(".site-header .nav-actions");
+    if (navLinks && navActions && !navLinks.querySelector(".mobile-nav-actions")) {
+      const mobileActions = document.createElement("div");
+      mobileActions.className = "mobile-nav-actions";
+      mobileActions.innerHTML = navActions.innerHTML;
+      navLinks.appendChild(mobileActions);
+    }
+  };
+  setupMobileNavActions();
+
   // 1. Dynamic Year Update
   document.querySelectorAll("[data-year]").forEach(e => e.textContent = new Date().getFullYear());
 
@@ -79,18 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelector(".nav-links");
   if (toggle && links) {
     toggle.addEventListener("click", () => {
-      const isVisible = links.style.display === "flex";
-      links.style.display = isVisible ? "none" : "flex";
-      links.style.flexDirection = "column";
-      links.style.position = "absolute";
-      links.style.top = "68px";
-      links.style.left = "12px";
-      links.style.right = "12px";
-      links.style.background = "#fff";
-      links.style.padding = "18px";
-      links.style.borderRadius = "16px";
-      links.style.boxShadow = "0 12px 35px rgba(0,0,0,.12)";
-      links.style.zIndex = "100";
+      links.classList.toggle("open");
     });
   }
 
@@ -101,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function switchDashTab(targetId) {
   if (!targetId) targetId = "overview";
   const sections = document.querySelectorAll(".dash-section");
-  const sideLinks = document.querySelectorAll(".side-links a[data-dash-target]");
+  const dashLinks = document.querySelectorAll("a[data-dash-target]");
   if (!sections.length) return;
 
   sections.forEach(sec => {
@@ -112,7 +114,7 @@ function switchDashTab(targetId) {
     }
   });
 
-  sideLinks.forEach(link => {
+  dashLinks.forEach(link => {
     if (link.getAttribute("data-dash-target") === targetId) {
       link.classList.add("active");
     } else {
@@ -122,16 +124,28 @@ function switchDashTab(targetId) {
 }
 
 function initDashboardTabs() {
-  const sideLinks = document.querySelectorAll(".side-links a[data-dash-target]");
+  const dashLinks = document.querySelectorAll("a[data-dash-target]");
   const sections = document.querySelectorAll(".dash-section");
+  const dashMobileToggle = document.getElementById("dashMobileToggle");
+  const dashMobileDropdown = document.getElementById("dashMobileDropdown");
+
+  if (dashMobileToggle && dashMobileDropdown) {
+    dashMobileToggle.addEventListener("click", () => {
+      dashMobileDropdown.classList.toggle("open");
+    });
+  }
+
   if (!sections.length) return;
 
-  sideLinks.forEach(link => {
+  dashLinks.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const targetId = link.getAttribute("data-dash-target");
       switchDashTab(targetId);
       history.replaceState(null, null, "#" + targetId);
+      if (dashMobileDropdown) {
+        dashMobileDropdown.classList.remove("open");
+      }
     });
   });
 
@@ -165,5 +179,40 @@ function sendAdvisorNote() {
     }
   }
 }
+
+// Live Income Gap Calculator Handler for Home 2
+function initGapCalculator() {
+  const targetExpenseInput = document.getElementById("targetExpense");
+  const socialSecurityInput = document.getElementById("socialSecurity");
+  const targetExpenseVal = document.getElementById("targetExpenseVal");
+  const socialSecurityVal = document.getElementById("socialSecurityVal");
+  const gapResultVal = document.getElementById("gapResultVal");
+  const gapCoveragePct = document.getElementById("gapCoveragePct");
+
+  const updateGapCalc = () => {
+    if (!targetExpenseInput || !socialSecurityInput) return;
+    const expense = parseInt(targetExpenseInput.value) || 6000;
+    const socSec = parseInt(socialSecurityInput.value) || 2400;
+
+    if (targetExpenseVal) targetExpenseVal.textContent = "$" + expense.toLocaleString();
+    if (socialSecurityVal) socialSecurityVal.textContent = "$" + socSec.toLocaleString();
+
+    const gapNeeded = Math.max(0, expense - socSec);
+    if (gapResultVal) gapResultVal.textContent = "$" + gapNeeded.toLocaleString() + " / mo";
+
+    const coverage = Math.min(100, Math.round((socSec / expense) * 100));
+    if (gapCoveragePct) gapCoveragePct.textContent = coverage + "% Base Floor Coverage";
+  };
+
+  if (targetExpenseInput && socialSecurityInput) {
+    targetExpenseInput.addEventListener("input", updateGapCalc);
+    socialSecurityInput.addEventListener("input", updateGapCalc);
+    updateGapCalc();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initGapCalculator();
+});
 
 
