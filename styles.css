@@ -1083,6 +1083,12 @@ h3 {
   gap: 14px
 }
 
+.dash-sub-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
 .dash-card {
   background: white;
   border: 1px solid var(--line);
@@ -1599,8 +1605,9 @@ h3 {
     display: block
   }
 
-  .dash-grid {
-    grid-template-columns: 1fr 1fr
+  .dash-grid,
+  .dash-sub-grid {
+    grid-template-columns: 1fr !important;
   }
 
   .dash-card {
