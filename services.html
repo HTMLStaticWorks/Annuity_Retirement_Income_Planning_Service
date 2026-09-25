@@ -23,7 +23,10 @@
     .feature-list {
       display: grid;
       gap: 12px;
-      margin-top: 16px;
+      margin-top: auto;
+      margin-bottom: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
     }
     .feature-item {
       display: flex;
@@ -134,6 +137,9 @@
 
         <div class="grid-3">
           <div class="card" id="income">
+            <div class="card-img">
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=85" alt="Retirement income optimization and cash flow mapping">
+            </div>
             <div class="icon">01</div>
             <h3>Retirement Income Optimization</h3>
             <p>Consolidate Social Security benefits, pension payouts, annuities, and investment withdrawals into a single cash-flow stream.</p>
@@ -141,10 +147,13 @@
               <div class="feature-item"><span class="feature-check">✓</span> Guaranteed cash flow mapping</div>
               <div class="feature-item"><span class="feature-check">✓</span> Inflation protection adjustments</div>
             </div>
-            <a class="btn btn-soft" href="dashboard.html" style="margin-top:20px; width:100%; justify-content:center;">View Income Dashboard →</a>
+            <a class="btn btn-soft" href="dashboard.html" style="margin-top:auto; width:100%; justify-content:center;">View Income Dashboard →</a>
           </div>
 
           <div class="card" id="annuities">
+            <div class="card-img">
+              <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=1200&q=85" alt="Annuity contract management and rate locks">
+            </div>
             <div class="icon">02</div>
             <h3>Annuity Contract Management</h3>
             <p>Organize existing fixed, indexed, or deferred annuity contracts with complete visibility into rates and payout schedules.</p>
@@ -152,10 +161,13 @@
               <div class="feature-item"><span class="feature-check">✓</span> Rate locks & rider summaries</div>
               <div class="feature-item"><span class="feature-check">✓</span> Annuitization date tracking</div>
             </div>
-            <a class="btn btn-soft" href="dashboard.html" style="margin-top:20px; width:100%; justify-content:center;">Explore Annuity Vault →</a>
+            <a class="btn btn-soft" href="dashboard.html" style="margin-top:auto; width:100%; justify-content:center;">Explore Annuity Vault →</a>
           </div>
 
           <div class="card" id="legacy">
+            <div class="card-img">
+              <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=85" alt="Legacy and estate protection for family priorities">
+            </div>
             <div class="icon">03</div>
             <h3>Legacy & Estate Protection</h3>
             <p>Ensure your spouse and beneficiaries are protected with structured beneficiary designations and tax-efficient transfer strategies.</p>
@@ -163,7 +175,7 @@
               <div class="feature-item"><span class="feature-check">✓</span> Primary & contingent reviews</div>
               <div class="feature-item"><span class="feature-check">✓</span> Estate document vaulting</div>
             </div>
-            <a class="btn btn-soft" href="dashboard.html" style="margin-top:20px; width:100%; justify-content:center;">Review Beneficiaries →</a>
+            <a class="btn btn-soft" href="dashboard.html" style="margin-top:auto; width:100%; justify-content:center;">Review Beneficiaries →</a>
           </div>
         </div>
       </div>
@@ -188,7 +200,7 @@
             <div class="section-badge">CHECKLIST</div>
             <h3>Retirement Cash Flow Checklist</h3>
             <p>A step-by-step workbook for categorizing essential vs discretionary monthly expenses before retirement.</p>
-            <a href="dashboard.html" class="btn btn-soft" style="margin-top:14px; width:100%; justify-content:center;">Download Checklist (PDF)</a>
+            <a href="dashboard.html" class="btn btn-soft" style="margin-top:auto; width:100%; justify-content:center;">Download Checklist (PDF)</a>
           </div>
 
           <div class="card">
@@ -198,7 +210,7 @@
             <div class="section-badge">INTERACTIVE TOOL</div>
             <h3>What-If Scenario Simulator</h3>
             <p>Model how retiring at age 62 vs 67 or adjusting inflation assumptions impacts your long-term capital balance.</p>
-            <a href="dashboard.html" class="btn btn-soft" style="margin-top:14px; width:100%; justify-content:center;">Launch Scenario Simulator</a>
+            <a href="dashboard.html" class="btn btn-soft" style="margin-top:auto; width:100%; justify-content:center;">Launch Scenario Simulator</a>
           </div>
 
           <div class="card">
@@ -208,7 +220,7 @@
             <div class="section-badge">GUIDE</div>
             <h3>Document Vault Blueprint</h3>
             <p>Learn how to securely store IRA statements, annuity contracts, and wills for seamless family access.</p>
-            <a href="dashboard.html" class="btn btn-soft" style="margin-top:14px; width:100%; justify-content:center;">Open Document Vault</a>
+            <a href="dashboard.html" class="btn btn-soft" style="margin-top:auto; width:100%; justify-content:center;">Open Document Vault</a>
           </div>
         </div>
       </div>
@@ -311,10 +323,6 @@
       </div>
       <div class="footer-bottom">
         <div>© <span data-year></span> Retira. All rights reserved. Planning illustrations are educational and not financial advice.</div>
-        <div class="footer-bottom-links">
-          <button type="button" class="theme-toggle-btn" data-action="toggle-theme" title="Toggle Light/Dark Theme">🌙</button>
-          <button type="button" class="rtl-toggle-btn" data-action="toggle-rtl" title="Toggle RTL Layout">RTL</button>
-        </div>
       </div>
     </div>
   </footer>

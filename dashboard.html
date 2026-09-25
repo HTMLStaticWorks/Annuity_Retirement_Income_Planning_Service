@@ -421,11 +421,10 @@
             <h1 style="font-size: 2.5rem;">Good morning, Alex.</h1>
             <p class="lead">Your retirement income plan is active. All guaranteed annuity payouts are on schedule.</p>
           </div>
-          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <button type="button" class="btn btn-primary" onclick="showModal('addAccountModal')">+ Link Account</button>
-            <button type="button" class="btn btn-soft"
-              onclick="showToast('📄 Generating consolidated PDF statement...')">📄 Export Report</button>
-            <button type="button" class="btn btn-gold" onclick="showModal('scheduleModal')">📅 Schedule Review</button>
+          <div class="dash-top-actions">
+            <button type="button" class="btn btn-primary dash-action-btn" onclick="showModal('addAccountModal')">+ Link Account</button>
+            <button type="button" class="btn btn-soft dash-action-btn" onclick="showToast('📄 Generating consolidated PDF statement...')">📄 Export Report</button>
+            <button type="button" class="btn btn-gold dash-action-btn" onclick="showModal('scheduleModal')">📅 Schedule Review</button>
           </div>
         </div>
 
@@ -504,21 +503,21 @@
                   <strong>Annual Review Scheduled</strong>
                   <small style="display: block; color: var(--muted);">Sep 28, 2026 · Virtual Conference</small>
                 </div>
-                <span class="tag">Upcoming</span>
+                <span class="notif-pill upcoming">Upcoming</span>
               </div>
               <div class="list-item">
                 <div>
                   <strong>August Statement Ready</strong>
                   <small style="display: block; color: var(--muted);">Consolidated PDF report generated</small>
                 </div>
-                <button type="button" class="btn btn-soft btn-sm" onclick="showToast('Downloading August 2026 Statement...')">View</button>
+                <button type="button" class="notif-pill btn-view" onclick="showToast('Downloading August 2026 Statement...')">View</button>
               </div>
               <div class="list-item">
                 <div>
                   <strong>Annuity Payout Lock</strong>
                   <small style="display: block; color: var(--muted);">Rate 5.45% APY active</small>
                 </div>
-                <span class="tag" style="background: rgba(45,114,91,0.15); color: var(--green);">Locked</span>
+                <span class="notif-pill locked">Locked</span>
               </div>
             </div>
           </div>

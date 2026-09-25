@@ -344,10 +344,85 @@ img {
   background: rgba(52, 211, 153, 0.15);
 }
 
+[data-theme="dark"] .btn-primary {
+  background: #256d56;
+  color: #ffffff;
+  border: 1px solid #34d399;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background: #34d399;
+  color: #0c1d23;
+  border-color: #34d399;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 211, 153, 0.45);
+}
+
 [data-theme="dark"] .btn-soft {
-  background: #132a32;
-  border-color: #1d3d35;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .btn-soft:hover {
+  background: rgba(52, 211, 153, 0.18);
+  border-color: #34d399;
+  color: #34d399;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .btn-gold {
+  background: var(--gold);
+  color: #0c1d23;
+}
+
+[data-theme="dark"] .btn-gold:hover {
+  background: #f0cc75;
+  color: #0c1d23;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 167, 92, 0.45);
+}
+
+[data-theme="dark"] .eyebrow {
+  color: #34d399 !important;
+  background: rgba(52, 211, 153, 0.15) !important;
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+[data-theme="dark"] .hero-chip-top {
+  background: #09171c;
   color: #e2ede8;
+  border-color: #1d3d35;
+}
+
+[data-theme="dark"] .hero-chip-bottom {
+  background: #132a32;
+  color: #e2ede8;
+  border-color: #1d3d35;
+}
+
+[data-theme="dark"] .hero-chip-bottom strong {
+  color: #34d399 !important;
+}
+
+[data-theme="dark"] .section-badge {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+
+[data-theme="dark"] .floating-badge {
+  background: #132a32;
+  color: #e2ede8;
+  border-color: #1d3d35;
+}
+
+[data-theme="dark"] .floating-badge strong {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .floating-badge small {
+  color: #34d399;
 }
 
 [data-theme="dark"] .floating-card {
@@ -1226,6 +1301,7 @@ h3 {
 .list-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 15px;
   padding: 13px 0;
   border-bottom: 1px solid var(--line)
@@ -2044,4 +2120,338 @@ h3 {
   border-top: 1px solid var(--line);
   margin-top: -6px;
   padding-top: 16px;
+}
+
+/* Gap Calculator Result Box Dark Mode Contrast */
+.gap-result-box {
+  background: #17313b;
+  color: white;
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .gap-result-box {
+  background: #0d222a;
+  border: 1px solid #1d3d35;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .gap-result-box .eyebrow {
+  color: #34d399 !important;
+  background: rgba(52, 211, 153, 0.15) !important;
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+[data-theme="dark"] .gap-result-box p {
+  color: #d0e2db !important;
+}
+
+/* Card Vertical Alignment & Spacing for Grid Buttons */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) and (min-width: 641px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3 > .card:nth-child(3):last-child,
+  .grid-3 > div:nth-child(3):last-child,
+  .grid-3 > .testimonial-card:nth-child(3):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 540px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card,
+.grid-3 .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card .feature-list,
+.card .list {
+  margin-top: auto !important;
+  margin-bottom: 20px !important;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+[data-theme="dark"] .card .feature-list,
+[data-theme="dark"] .card .list {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.card > .btn,
+.card > a.btn,
+.card .btn {
+  margin-top: 0 !important;
+}
+
+/* About Page: Core Values Grid Layout & Alignment */
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.value-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: 0 10px 30px rgba(20, 49, 59, 0.04);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(20, 49, 59, 0.1);
+}
+
+.value-num {
+  font-size: 1rem;
+  font-weight: 850;
+  color: var(--green);
+  background: var(--sage);
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .value-num {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+
+.value-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.value-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Contact Page Portal Card & Map Info Card Dark Mode Contrast */
+.contact-portal-card {
+  background: #17313b;
+  color: #ffffff;
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-portal-card h3 {
+  color: #ffffff;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.contact-portal-card p {
+  color: #c4d7d0;
+}
+
+[data-theme="dark"] .contact-portal-card {
+  background: #0d222a !important;
+  border: 1px solid #1d3d35 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .contact-portal-card h3 {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .contact-portal-card p {
+  color: #d0e2db !important;
+}
+
+[data-theme="dark"] .contact-portal-card .eyebrow {
+  color: #34d399 !important;
+  background: rgba(52, 211, 153, 0.15) !important;
+  border: 1px solid rgba(52, 211, 153, 0.25) !important;
+}
+
+[data-theme="dark"] .map-info-card {
+  background: #132a32 !important;
+  border-color: #1d3d35 !important;
+  color: #e2ede8 !important;
+}
+
+[data-theme="dark"] .map-info-card strong {
+  color: #ffffff !important;
+}
+
+/* Dashboard Overview Top Actions Uniform Styling */
+.dash-top-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dash-action-btn {
+  height: 44px !important;
+  min-width: 160px;
+  flex: 1;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 0 20px;
+  font-size: 0.92rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .dash-top-actions {
+    width: 100%;
+    margin-top: 14px;
+  }
+  .dash-action-btn {
+    width: 100%;
+  }
+}
+
+/* Universal Dark Mode Green Badges High-Contrast Enforcement */
+[data-theme="dark"] .eyebrow,
+[data-theme="dark"] .section-badge,
+[data-theme="dark"] .outcome-badge,
+[data-theme="dark"] .tag,
+[data-theme="dark"] .status-badge,
+[data-theme="dark"] .client-badge,
+[data-theme="dark"] .yield-pill,
+[data-theme="dark"] .safety-rating {
+  color: #34d399 !important;
+  background: rgba(52, 211, 153, 0.16) !important;
+  border: 1px solid rgba(52, 211, 153, 0.25) !important;
+}
+
+/* Universal Dark Mode Button Hover Contrast Enforcement */
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] button.btn-primary:hover,
+[data-theme="dark"] a.btn-primary:hover {
+  background: #34d399 !important;
+  color: #0c1d23 !important;
+  border-color: #34d399 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(52, 211, 153, 0.5) !important;
+}
+
+[data-theme="dark"] .btn-soft:hover,
+[data-theme="dark"] button.btn-soft:hover,
+[data-theme="dark"] a.btn-soft:hover {
+  background: rgba(52, 211, 153, 0.22) !important;
+  border-color: #34d399 !important;
+  color: #34d399 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .btn-gold:hover,
+[data-theme="dark"] button.btn-gold:hover,
+[data-theme="dark"] a.btn-gold:hover {
+  background: #f0cc75 !important;
+  color: #0c1d23 !important;
+  border-color: #f0cc75 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(201, 167, 92, 0.5) !important;
+}
+
+/* Dashboard Plan Notifications Uniform Status Pills */
+.notif-pill {
+  width: 90px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0;
+  border: 1px solid transparent;
+  flex-shrink: 0;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.notif-pill.upcoming {
+  background: var(--sage);
+  color: var(--green);
+}
+
+.notif-pill.btn-view {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notif-pill.btn-view:hover {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+
+.notif-pill.locked {
+  background: rgba(45, 114, 91, 0.15);
+  color: var(--green);
+}
+
+[data-theme="dark"] .notif-pill.upcoming,
+[data-theme="dark"] .notif-pill.locked {
+  background: rgba(52, 211, 153, 0.16) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(52, 211, 153, 0.25) !important;
+}
+
+[data-theme="dark"] .notif-pill.btn-view {
+  background: #132a32 !important;
+  border: 1px solid #1d3d35 !important;
+  color: #e2ede8 !important;
+}
+
+[data-theme="dark"] .notif-pill.btn-view:hover {
+  background: #34d399 !important;
+  color: #0c1d23 !important;
+  border-color: #34d399 !important;
 }
