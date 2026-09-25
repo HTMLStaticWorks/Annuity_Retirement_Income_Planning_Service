@@ -206,6 +206,88 @@
       transform: translateY(0);
       opacity: 1;
     }
+
+    /* Auth Options Row (Remember Me & Forgot Password) */
+    .auth-options-row {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      margin-top: 14px !important;
+      margin-bottom: 20px !important;
+      width: 100% !important;
+      gap: 12px !important;
+      padding: 0 6px !important;
+      box-sizing: border-box !important;
+    }
+
+    .remember-label {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      font-size: 0.86rem !important;
+      color: var(--muted) !important;
+      cursor: pointer !important;
+      user-select: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      font-weight: 500 !important;
+      white-space: nowrap !important;
+      width: auto !important;
+      flex: 0 0 auto !important;
+      line-height: 1 !important;
+      transition: color 0.2s ease !important;
+    }
+
+    .remember-label:hover {
+      color: var(--ink) !important;
+    }
+
+    [data-theme="dark"] .remember-label:hover {
+      color: #e2ede8 !important;
+    }
+
+    .custom-checkbox {
+      appearance: auto !important;
+      -webkit-appearance: checkbox !important;
+      width: 16px !important;
+      height: 16px !important;
+      min-width: 16px !important;
+      max-width: 16px !important;
+      flex: 0 0 16px !important;
+      accent-color: var(--green) !important;
+      cursor: pointer !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      display: inline-block !important;
+      border-radius: 4px !important;
+      vertical-align: middle !important;
+    }
+
+    .forgot-link {
+      font-size: 0.86rem !important;
+      color: var(--green) !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+      margin-left: auto !important;
+      flex: 0 0 auto !important;
+      line-height: 1 !important;
+      transition: opacity 0.2s ease, text-decoration 0.2s ease !important;
+    }
+
+    [dir="rtl"] .forgot-link {
+      margin-left: 0 !important;
+      margin-right: auto !important;
+    }
+
+    .forgot-link:hover {
+      text-decoration: underline !important;
+      opacity: 0.85 !important;
+    }
+
+    [data-theme="dark"] .forgot-link {
+      color: #34d399 !important;
+    }
   </style>
 </head>
 
@@ -244,10 +326,14 @@
             <button type="button" class="password-toggle" onclick="togglePasswordVisibility('loginPassword', this)"
               aria-label="Toggle password visibility">👁️</button>
           </div>
-          <div style="text-align: right; margin-top: 8px;">
-            <a href="#" onclick="triggerForgotPassword(event)"
-              style="font-size: 0.84rem; color: var(--green); font-weight: 700;">Forgot password?</a>
-          </div>
+        </div>
+
+        <div class="auth-options-row" style="display: flex; align-items: center; justify-content: space-between; margin-top: 14px; margin-bottom: 20px; width: 100%; padding: 0 6px; box-sizing: border-box;">
+          <label for="rememberMe" class="remember-label" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.86rem; color: var(--muted); cursor: pointer; user-select: none; margin: 0; white-space: nowrap;">
+            <input type="checkbox" id="rememberMe" class="custom-checkbox" style="width: 16px; height: 16px; min-width: 16px; max-width: 16px; flex: 0 0 16px; accent-color: var(--green); cursor: pointer; margin: 0;">
+            <span>Remember me</span>
+          </label>
+          <a href="#" onclick="triggerForgotPassword(event)" class="forgot-link" style="font-size: 0.86rem; color: var(--green); font-weight: 700; text-decoration: none; white-space: nowrap; margin-left: auto;">Forgot password?</a>
         </div>
 
         <button class="btn btn-primary form-submit" type="submit"
