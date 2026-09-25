@@ -304,6 +304,20 @@
       padding: 6px 12px;
       font-size: 0.82rem;
     }
+
+    .vault-legacy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 850px) {
+      .vault-legacy-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -365,21 +379,31 @@
       </div>
 
       <div class="dash-mobile-advisor">
-        <small style="color: var(--green); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">YOUR CFP® ADVISOR</small>
+        <small
+          style="color: var(--green); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">YOUR
+          CFP® ADVISOR</small>
         <strong style="color: var(--ink); display: block; font-size: 0.98rem;">Sarah Johnson, CFP®</strong>
-        <p style="color: var(--muted); font-size: 0.84rem; margin: 4px 0 12px;">Senior Retirement Specialist · Fiduciary Advisory</p>
-        <button type="button" class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="showModal('scheduleModal')">📅 Schedule Advisor Review</button>
+        <p style="color: var(--muted); font-size: 0.84rem; margin: 4px 0 12px;">Senior Retirement Specialist · Fiduciary
+          Advisory</p>
+        <button type="button" class="btn btn-primary" style="width: 100%; justify-content: center;"
+          onclick="showModal('scheduleModal')">📅 Schedule Advisor Review</button>
       </div>
 
       <div class="dash-mobile-actions">
         <div style="display:flex; gap:10px; align-items:center;">
-          <button type="button" class="icon-btn" style="flex:none; width:42px; height:42px;" onclick="showToast('🔔 Notifications: 1) Annual Review scheduled for Sep 28. 2) August statement ready.')" title="Notifications">
+          <button type="button" class="icon-btn" style="flex:none; width:42px; height:42px;"
+            onclick="showToast('🔔 Notifications: 1) Annual Review scheduled for Sep 28. 2) August statement ready.')"
+            title="Notifications">
             🔔 <span class="icon-badge">2</span>
           </button>
-          <button type="button" class="theme-toggle-btn" data-action="toggle-theme" style="flex:1; height:42px; justify-content:center; border-radius:12px;">🌙 Theme</button>
-          <button type="button" class="rtl-toggle-btn" data-action="toggle-rtl" style="flex:1; height:42px; justify-content:center; border-radius:12px;">RTL</button>
+          <button type="button" class="theme-toggle-btn" data-action="toggle-theme"
+            style="flex:1; height:42px; justify-content:center; border-radius:12px;">🌙 Theme</button>
+          <button type="button" class="rtl-toggle-btn" data-action="toggle-rtl"
+            style="flex:1; height:42px; justify-content:center; border-radius:12px;">RTL</button>
         </div>
-        <a href="index.html" class="btn btn-soft" style="width: 100%; justify-content: center; margin-top: 10px; height:44px; border-radius:12px;">↪ Sign Out of Portal</a>
+        <a href="index.html" class="btn btn-soft"
+          style="width: 100%; justify-content: center; margin-top: 10px; height:44px; border-radius:12px;">↪ Sign Out of
+          Portal</a>
       </div>
     </div>
   </div>
@@ -405,7 +429,8 @@
         <strong style="color: white; display: block; font-size: 0.95rem;">Sarah Johnson, CFP®</strong>
         <p style="color: #a4b9b4; font-size: 0.8rem; margin: 4px 0 10px;">Senior Retirement Specialist</p>
         <button type="button" class="btn btn-soft btn-sm"
-          style="width: 100%; text-align: center; justify-content: center;" onclick="showModal('scheduleModal')">Book Review</button>
+          style="width: 100%; text-align: center; justify-content: center;" onclick="showModal('scheduleModal')">Book
+          Review</button>
       </div>
     </aside>
 
@@ -422,9 +447,12 @@
             <p class="lead">Your retirement income plan is active. All guaranteed annuity payouts are on schedule.</p>
           </div>
           <div class="dash-top-actions">
-            <button type="button" class="btn btn-primary dash-action-btn" onclick="showModal('addAccountModal')">+ Link Account</button>
-            <button type="button" class="btn btn-soft dash-action-btn" onclick="showToast('📄 Generating consolidated PDF statement...')">📄 Export Report</button>
-            <button type="button" class="btn btn-gold dash-action-btn" onclick="showModal('scheduleModal')">📅 Schedule Review</button>
+            <button type="button" class="btn btn-primary dash-action-btn" onclick="showModal('addAccountModal')">+ Link
+              Account</button>
+            <button type="button" class="btn btn-soft dash-action-btn"
+              onclick="showToast('📄 Generating consolidated PDF statement...')">📄 Export Report</button>
+            <button type="button" class="btn btn-gold dash-action-btn" onclick="showModal('scheduleModal')">📅 Schedule
+              Review</button>
           </div>
         </div>
 
@@ -468,25 +496,30 @@
               </div>
               <span class="tag">Active Status</span>
             </div>
-            <p style="color: var(--muted); margin-bottom: 18px;">Your portfolio is structured across fixed guaranteed annuities, government benefits, and investment portfolios to ensure uninterrupted lifetime income.</p>
-            
+            <p style="color: var(--muted); margin-bottom: 18px;">Your portfolio is structured across fixed guaranteed
+              annuities, government benefits, and investment portfolios to ensure uninterrupted lifetime income.</p>
+
             <div class="dash-sub-grid">
-              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);" onclick="switchDashTab('plan')">
+              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);"
+                onclick="switchDashTab('plan')">
                 <div class="eyebrow" style="margin-bottom: 4px;">PROJECTION MODEL</div>
                 <strong style="display: block; font-size: 1.05rem;">30-Year Planning →</strong>
                 <small style="color: var(--muted);">Explore income projections & inflation riders</small>
               </div>
-              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);" onclick="switchDashTab('accounts')">
+              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);"
+                onclick="switchDashTab('accounts')">
                 <div class="eyebrow" style="margin-bottom: 4px;">CONSOLIDATED ASSETS</div>
                 <strong style="display: block; font-size: 1.05rem;">$1.42M Balances →</strong>
                 <small style="color: var(--muted);">Review Fidelity, Vanguard & Schwab accounts</small>
               </div>
-              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);" onclick="switchDashTab('income')">
+              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);"
+                onclick="switchDashTab('income')">
                 <div class="eyebrow" style="margin-bottom: 4px;">ANNUITY VAULT</div>
                 <strong style="display: block; font-size: 1.05rem;">$8,450/mo Payouts →</strong>
                 <small style="color: var(--muted);">Social Security, Fixed Annuities & Pension</small>
               </div>
-              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);" onclick="switchDashTab('advisor')">
+              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);"
+                onclick="switchDashTab('advisor')">
                 <div class="eyebrow" style="margin-bottom: 4px;">ADVISOR CORNER</div>
                 <strong style="display: block; font-size: 1.05rem;">Sarah Johnson, CFP® →</strong>
                 <small style="color: var(--muted);">Upcoming Review on Sep 28 & Direct Messaging</small>
@@ -510,7 +543,8 @@
                   <strong>August Statement Ready</strong>
                   <small style="display: block; color: var(--muted);">Consolidated PDF report generated</small>
                 </div>
-                <button type="button" class="notif-pill btn-view" onclick="showToast('Downloading August 2026 Statement...')">View</button>
+                <button type="button" class="notif-pill btn-view"
+                  onclick="showToast('Downloading August 2026 Statement...')">View</button>
               </div>
               <div class="list-item">
                 <div>
@@ -658,7 +692,8 @@
             <h1 style="font-size: 2.4rem;">Linked Accounts & Asset Balances</h1>
             <p class="lead">View real-time aggregated balances across IRA, 401(k), and brokerage accounts.</p>
           </div>
-          <button type="button" class="btn btn-primary" onclick="showModal('addAccountModal')">+ Link Financial Institution</button>
+          <button type="button" class="btn btn-primary" onclick="showModal('addAccountModal')">+ Link Financial
+            Institution</button>
         </div>
 
         <div class="card">
@@ -823,7 +858,8 @@
                 <div>Policy Number: <strong>AT-8849210-X</strong></div>
                 <div>Income Begin Date: <strong>Jan 15, 2036</strong></div>
                 <div>Guaranteed Payout Rate: <strong>5.45% APY Lock</strong></div>
-                <div>Guaranteed Payout: <strong style="color: var(--green); font-size: 1.05rem;">$2,250 / mo for life</strong></div>
+                <div>Guaranteed Payout: <strong style="color: var(--green); font-size: 1.05rem;">$2,250 / mo for
+                    life</strong></div>
                 <div>Annual COLA Adjustment: <strong>+ 3% Inflation Rider</strong></div>
               </div>
             </div>
@@ -845,47 +881,54 @@
             <h1 style="font-size: 2.4rem;">Advisor Consultation & Document Vault</h1>
             <p class="lead">Connect directly with Sarah Johnson CFP® and manage your encrypted documents.</p>
           </div>
-          <button type="button" class="btn btn-gold" onclick="showModal('scheduleModal')">📅 Schedule Consultation</button>
+          <button type="button" class="btn btn-gold" onclick="showModal('scheduleModal')">📅 Schedule
+            Consultation</button>
         </div>
 
-        <div class="dash-layout">
-          <!-- Advisor Profile Card -->
-          <div class="card">
-            <div class="eyebrow">CERTIFIED FINANCIAL PLANNER®</div>
-            <h3 style="font-size: 1.5rem; margin-bottom: 6px;">Your Dedicated Specialist</h3>
+        <!-- Advisor Profile Card (Top Full Width) -->
+        <div class="card" style="margin-bottom: 20px;">
+          <div class="eyebrow">CERTIFIED FINANCIAL PLANNER®</div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 6px;">Your Dedicated Specialist</h3>
 
-            <div class="advisor-profile-box">
-              <div class="advisor-avatar-lg">SJ</div>
-              <div>
-                <strong style="display: block; font-size: 1.1rem; color: var(--ink);">Sarah Johnson, CFP®</strong>
-                <small style="color: var(--muted);">Senior Retirement & Annuity Specialist · 14 yrs experience</small>
-              </div>
-            </div>
-
-            <div
-              style="margin: 16px 0; padding: 16px; background: var(--paper); border-radius: 14px; border: 1px solid var(--line);">
-              <div style="font-size: 0.82rem; color: var(--muted); font-weight: 700;">NEXT SCHEDULED CONSULTATION</div>
-              <strong style="display: block; font-size: 1.05rem; margin-top: 4px; color: var(--ink);">Sep 28, 2026 · 10:00 AM EST</strong>
-              <small style="color: var(--green); font-weight: 600;">📹 Virtual HD Video Conference</small>
-            </div>
-
-            <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;">
-              <a class="btn btn-primary" href="services.html#advisors" style="flex: 1; text-align: center; justify-content: center;">Join HD Video Room</a>
-              <button type="button" class="btn btn-soft" style="flex: 1; text-align: center; justify-content: center;"
-                onclick="showModal('scheduleModal')">Reschedule Meeting</button>
-            </div>
-
-            <!-- Send Direct Note to Advisor -->
-            <div style="margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line);">
-              <label style="font-size: 0.88rem; font-weight: 700; display: block; margin-bottom: 8px;">Send Secure Note to Sarah</label>
-              <textarea id="advisorNoteInput" rows="3" style="width: 100%; border: 1px solid var(--line); border-radius: 12px; padding: 10px; background: var(--cream); font-family: inherit; font-size: 0.9rem;" placeholder="Type your message or planning question here..."></textarea>
-              <button type="button" class="btn btn-primary btn-sm" style="margin-top: 8px;" onclick="sendAdvisorNote()">Send Note to Advisor</button>
+          <div class="advisor-profile-box">
+            <div class="advisor-avatar-lg">SJ</div>
+            <div>
+              <strong style="display: block; font-size: 1.1rem; color: var(--ink);">Sarah Johnson, CFP®</strong>
+              <small style="color: var(--muted);">Senior Retirement & Annuity Specialist · 14 yrs experience</small>
             </div>
           </div>
 
-          <!-- Document Vault & Beneficiaries -->
-          <div>
-            <div class="card" style="margin-bottom: 18px;">
+          <div
+            style="margin: 16px 0; padding: 16px; background: var(--paper); border-radius: 14px; border: 1px solid var(--line);">
+            <div style="font-size: 0.82rem; color: var(--muted); font-weight: 700;">NEXT SCHEDULED CONSULTATION</div>
+            <strong style="display: block; font-size: 1.05rem; margin-top: 4px; color: var(--ink);">Sep 28, 2026 · 10:00
+              AM EST</strong>
+            <small style="color: var(--green); font-weight: 600;">📹 Virtual HD Video Conference</small>
+          </div>
+
+          <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;">
+            <a class="btn btn-primary" href="services.html#advisors"
+              style="flex: 1; text-align: center; justify-content: center;">Join HD Video Room</a>
+            <button type="button" class="btn btn-soft" style="flex: 1; text-align: center; justify-content: center;"
+              onclick="showModal('scheduleModal')">Reschedule Meeting</button>
+          </div>
+
+          <!-- Send Direct Note to Advisor -->
+          <div style="margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line);">
+            <label style="font-size: 0.88rem; font-weight: 700; display: block; margin-bottom: 8px;">Send Secure Note to
+              Sarah</label>
+            <textarea id="advisorNoteInput" rows="3"
+              style="width: 100%; border: 1px solid var(--line); border-radius: 12px; padding: 10px; background: var(--cream); font-family: inherit; font-size: 0.9rem;"
+              placeholder="Type your message or planning question here..."></textarea>
+            <button type="button" class="btn btn-primary btn-sm" style="margin-top: 8px;"
+              onclick="sendAdvisorNote()">Send Note to Advisor</button>
+          </div>
+        </div>
+
+        <!-- Side-by-side grid for Document Vault & Estate & Legacy in Desktop View -->
+        <div class="vault-legacy-grid">
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
               <div class="section-head" style="margin-bottom: 12px;">
                 <div>
                   <div class="eyebrow">DOCUMENT VAULT</div>
@@ -922,23 +965,61 @@
                     onclick="showToast('Downloading Retirement Income Plan Blueprint.pdf...')">Download</button>
                 </div>
               </div>
-
-              <button type="button" class="btn btn-soft"
-                style="width: 100%; margin-top: 14px; text-align: center; justify-content: center;"
-                onclick="showToast('Opening secure document uploader...')">⬆ Upload Document to Vault</button>
             </div>
 
-            <div class="card">
-              <div class="eyebrow">ESTATE & LEGACY</div>
-              <h3 style="font-size: 1.35rem;">Beneficiary Designations</h3>
+            <button type="button" class="btn btn-soft"
+              style="width: 100%; margin-top: 14px; text-align: center; justify-content: center;"
+              onclick="showToast('Opening secure document uploader...')">⬆ Upload Document to Vault</button>
+          </div>
 
-              <div style="margin: 14px 0; padding: 14px; background: var(--cream); border-radius: 14px; border: 1px solid var(--line); font-size: 0.88rem; line-height: 1.6;">
-                <div>Primary: <strong style="color: var(--green);">Jane Vance (Spouse) — 100%</strong></div>
-                <div>Contingent: <strong style="color: var(--danger);">⚠️ Unassigned</strong></div>
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="section-head" style="margin-bottom: 12px;">
+                <div>
+                  <div class="eyebrow">ESTATE & LEGACY</div>
+                  <h3 style="font-size: 1.35rem;">Beneficiary Designations</h3>
+                </div>
+                <span class="tag" style="background: rgba(45, 114, 91, 0.1); color: var(--green);">Reviewed Aug
+                  2026</span>
               </div>
 
-              <button type="button" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; justify-content: center;" onclick="showModal('beneficiaryModal')">Update Beneficiaries</button>
+              <!-- Beneficiary List -->
+              <div class="list" style="margin-bottom: 14px;">
+                <div class="list-item"
+                  style="padding: 10px 12px; background: var(--cream); border-radius: 12px; margin-bottom: 8px;">
+                  <div>
+                    <div
+                      style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--muted); letter-spacing: 0.04em;">
+                      Primary Beneficiary</div>
+                    <strong style="color: var(--ink); font-size: 0.95rem;">Jane Vance (Spouse)</strong>
+                    <small style="display: block; color: var(--green); font-weight: 600;">100% Allocation ·
+                      Active</small>
+                  </div>
+                  <span
+                    style="font-size: 0.78rem; font-weight: 700; background: rgba(45, 114, 91, 0.12); color: var(--green); padding: 4px 8px; border-radius: 6px;">✓
+                    Verified</span>
+                </div>
+
+                <div class="list-item"
+                  style="padding: 10px 12px; background: rgba(180, 83, 77, 0.06); border: 1px dashed var(--danger); border-radius: 12px;">
+                  <div>
+                    <div
+                      style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--danger); letter-spacing: 0.04em;">
+                      Contingent Beneficiary</div>
+                    <strong style="color: var(--ink); font-size: 0.95rem;">Unassigned</strong>
+                    <small style="display: block; color: var(--muted);">0% Allocated · Add heir to prevent
+                      probate</small>
+                  </div>
+                  <button type="button" class="btn btn-soft btn-sm"
+                    style="color: var(--danger); border-color: var(--danger);"
+                    onclick="showModal('beneficiaryModal')">Add Heir</button>
+                </div>
+              </div>
             </div>
+
+            <button type="button" class="btn btn-primary btn-sm"
+              style="width: 100%; text-align: center; justify-content: center; margin-top: 14px; padding: 10px;"
+              onclick="showModal('beneficiaryModal')">Update Beneficiaries & Estate Setup</button>
           </div>
         </div>
       </div>
