@@ -55,6 +55,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-top: 32px;
+      align-items: stretch;
     }
 
     @media (max-width: 900px) {
@@ -69,17 +70,79 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(20, 49, 59, 0.06);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 0 !important;
     }
 
     .team-card-img {
       height: 260px;
       width: 100%;
       object-fit: cover;
-      object-position: top center;
+      object-position: center 20%;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .team-card-img {
+        height: 360px;
+        max-height: 400px;
+        object-position: center 20%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .team-card-img {
+        height: 260px;
+        object-position: center 20%;
+      }
     }
 
     .team-card-body {
       padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .team-card-body h3 {
+      font-size: 1.25rem;
+      font-weight: 750;
+      line-height: 1.25;
+      margin-bottom: 6px !important;
+      min-height: 3.1rem;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .team-card-body small {
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.3;
+      min-height: 2.3rem;
+      display: flex;
+      align-items: flex-start;
+      color: var(--green);
+    }
+
+    [data-theme="dark"] .team-card-body small {
+      color: #34d399;
+    }
+
+    .team-card-body p {
+      margin-top: 10px !important;
+      font-size: 0.92rem;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    @media (max-width: 900px) {
+
+      .team-card-body h3,
+      .team-card-body small {
+        min-height: auto;
+      }
     }
   </style>
 </head>
@@ -160,7 +223,7 @@
         <div class="about-values-grid">
           <div class="value-card">
             <div class="value-num">01</div>
-            <h3>Fiduciary Duty</h3>
+            <h3>The Fiduciary Duty</h3>
             <p>Every strategy and annuity recommendation is structured solely in your best financial interest without
               commission bias.</p>
           </div>
@@ -245,9 +308,9 @@
               src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=85"
               alt="Arthur Pendelton Founder & CEO">
             <div class="team-card-body">
-              <h3 style="margin-bottom: 4px;">Arthur Pendelton, CFP®</h3>
-              <small style="color: var(--green); font-weight: 700;">Founder & Chief Executive Officer</small>
-              <p style="margin-top: 12px; font-size: 0.92rem; color: var(--muted);">Former Managing Director at
+              <h3>Arthur Pendelton, CFP®</h3>
+              <small>Founder & Chief Executive Officer</small>
+              <p>Former Managing Director at
                 BlackRock with 25+ years in annuity structuring and wealth preservation.</p>
             </div>
           </div>
@@ -257,9 +320,9 @@
               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85"
               alt="Elena Rostova CIO">
             <div class="team-card-body">
-              <h3 style="margin-bottom: 4px;">Elena Rostova, CFA</h3>
-              <small style="color: var(--green); font-weight: 700;">Chief Investment & Risk Officer</small>
-              <p style="margin-top: 12px; font-size: 0.92rem; color: var(--muted);">Specializes in fixed income
+              <h3>Elena Rostova, CFA</h3>
+              <small>Chief Investment & Risk Officer</small>
+              <p>Specializes in fixed income
                 portfolio modeling and carrier solvency stress testing.</p>
             </div>
           </div>
@@ -269,9 +332,9 @@
               src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=85"
               alt="David Sterling Head of Advisory">
             <div class="team-card-body">
-              <h3 style="margin-bottom: 4px;">David Sterling, ChFC®</h3>
-              <small style="color: var(--green); font-weight: 700;">Head of Client Advisory Services</small>
-              <p style="margin-top: 12px; font-size: 0.92rem; color: var(--muted);">Leads a national network of
+              <h3>David Sterling, ChFC®</h3>
+              <small>Head of Client Advisory Services</small>
+              <p>Leads a national network of
                 fiduciary advisors focused on customized retirement distribution strategies.</p>
             </div>
           </div>

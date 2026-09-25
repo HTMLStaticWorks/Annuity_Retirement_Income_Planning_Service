@@ -32,17 +32,37 @@
     /* Floating Top Controls */
     .top-controls {
       position: absolute;
-      top: 24px;
-      right: 28px;
+      top: 18px;
+      right: 18px;
       z-index: 30;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     [dir="rtl"] .top-controls {
       right: auto;
-      left: 28px;
+      left: 18px;
+    }
+
+    @media (max-width: 600px) {
+      .top-controls {
+        top: 10px;
+        right: 10px;
+      }
+
+      [dir="rtl"] .top-controls {
+        right: auto;
+        left: 10px;
+      }
+
+      .auth-page-wrapper {
+        padding: 54px 10px 20px;
+      }
+
+      .auth-card-clean {
+        padding: 28px 18px;
+      }
     }
 
     /* Password Wrap & Toggle */
