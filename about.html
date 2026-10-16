@@ -8,6 +8,9 @@
   <meta name="description"
     content="Learn about Retira's mission, fiduciary principles, track record, and leadership team dedicated to guaranteed retirement income.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
     .about-values-grid {
@@ -77,30 +80,31 @@
     }
 
     .team-card-img {
-      height: 260px;
+      height: 310px;
       width: 100%;
       object-fit: cover;
-      object-position: center 20%;
+      object-position: top center;
       flex-shrink: 0;
+      background: var(--sage);
     }
 
     @media (max-width: 900px) {
       .team-card-img {
-        height: 360px;
+        height: 330px;
         max-height: 400px;
-        object-position: center 20%;
+        object-position: top center;
       }
     }
 
     @media (max-width: 600px) {
       .team-card-img {
-        height: 260px;
-        object-position: center 20%;
+        height: 290px;
+        object-position: top center;
       }
     }
 
     .team-card-body {
-      padding: 22px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -108,10 +112,9 @@
 
     .team-card-body h3 {
       font-size: 1.25rem;
-      font-weight: 750;
+      font-weight: 600;
       line-height: 1.25;
       margin-bottom: 6px !important;
-      min-height: 3.1rem;
       display: flex;
       align-items: flex-start;
     }
@@ -120,7 +123,6 @@
       font-size: 0.88rem;
       font-weight: 700;
       line-height: 1.3;
-      min-height: 2.3rem;
       display: flex;
       align-items: flex-start;
       color: var(--green);
@@ -135,14 +137,6 @@
       font-size: 0.92rem;
       color: var(--muted);
       flex: 1;
-    }
-
-    @media (max-width: 900px) {
-
-      .team-card-body h3,
-      .team-card-body small {
-        min-height: auto;
-      }
     }
   </style>
 </head>
@@ -191,17 +185,30 @@
             </div>
           </div>
           <div>
-            <div class="page-hero-visual">
-              <div class="hero-chip-top">
-                <span style="color: #f59e0b;">🛡️</span>
-                <span>100% Fiduciary Standard</span>
-              </div>
-              <div class="page-hero-img-wrap">
-                <img src="about1.jpg" alt="Retira leadership team specialist">
-              </div>
-              <div class="hero-chip-bottom">
-                <strong style="color: var(--green); display: block;">🏆 $2.4B+ Assets Guided</strong>
-                <small style="color: var(--muted);">Independent fiduciary advisory care</small>
+            <div class="about-fiduciary-seal-card">
+              <div class="charter-seal-icon">🏛️</div>
+              <div class="charter-seal-title">Chartered Fiduciary Governance</div>
+              <p class="charter-seal-text">
+                Legally and ethically bound to act solely in your best financial interest across every annuity recommendation.
+              </p>
+
+              <div class="charter-points">
+                <div class="charter-point-row">
+                  <span>✓</span>
+                  <span>100% Independent & Commission-Free Advice</span>
+                </div>
+                <div class="charter-point-row">
+                  <span>✓</span>
+                  <span>CFP® Board Standards of Professional Conduct</span>
+                </div>
+                <div class="charter-point-row">
+                  <span>✓</span>
+                  <span>Exclusive AM Best A++ Rated Carrier Reserve Filter</span>
+                </div>
+                <div class="charter-point-row">
+                  <span>✓</span>
+                  <span>SOC-2 Type II Certified Bank-Grade Document Vault</span>
+                </div>
               </div>
             </div>
           </div>
@@ -220,33 +227,46 @@
           <p class="lead">We hold ourselves to an unyielding standard of clarity, independence, and long-term care.</p>
         </div>
 
-        <div class="about-values-grid">
-          <div class="value-card">
-            <div class="value-num">01</div>
-            <h3>The Fiduciaries Duties</h3>
-            <p>Every strategy and annuity recommendation is structured solely in your best financial interest without
-              commission bias.</p>
+        <div class="philosophy-modern-layout">
+          <div class="philosophy-manifesto-panel">
+            <span class="kicker" style="color: var(--gold); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;">FIDUCIARY CREED</span>
+            <div class="philosophy-quote">"True retirement peace doesn't come from guessing market peaks—it comes from guaranteed lifetime income engineered without carrier bias."</div>
+            <p style="font-size: 0.92rem; color: #b6d3cb; margin-bottom: 22px; line-height: 1.6;">Our fiduciary charter holds our firm to an unyielding legal standard: no proprietary quotas, zero undisclosed commissions, and strict fee parity.</p>
+            <a href="contact.html" class="btn btn-primary" style="align-self: flex-start;">Download Fiduciary Disclosure Packet</a>
           </div>
 
-          <div class="value-card">
-            <div class="value-num">02</div>
-            <h3>Total Transparency</h3>
-            <p>Unvarnished visibility into contract fees, rider conditions, and exact payout schedules across all market
-              scenarios.</p>
-          </div>
+          <div class="philosophy-pillars-list">
+            <div class="philosophy-pillar-row">
+              <div class="pillar-num-badge">01</div>
+              <div>
+                <h3 style="margin-bottom: 6px;">Uncompromising Fiduciary Duty</h3>
+                <p style="margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.55;">Every retirement roadmap and annuity structure is recommended solely in your best financial interest, legally documented and sign-off verified.</p>
+              </div>
+            </div>
 
-          <div class="value-card">
-            <div class="value-num">03</div>
-            <h3>Guaranteed Cash Flow</h3>
-            <p>Prioritizing fixed lifetime annuities to ensure your core monthly living costs are 100% covered
-              regardless of market downturns.</p>
-          </div>
+            <div class="philosophy-pillar-row">
+              <div class="pillar-num-badge">02</div>
+              <div>
+                <h3 style="margin-bottom: 6px;">Total Fee & Surrender Transparency</h3>
+                <p style="margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.55;">100% unvarnished visibility into rider expenses, mortality fees, surrender horizons, and net cash-flow yield across all market conditions.</p>
+              </div>
+            </div>
 
-          <div class="value-card">
-            <div class="value-num">04</div>
-            <h3>Human + Digital Harmony</h3>
-            <p>Combining state-of-the-art client portal technology with 1-on-1 access to Certified Financial Planner
-              (CFP®) specialists.</p>
+            <div class="philosophy-pillar-row">
+              <div class="pillar-num-badge">03</div>
+              <div>
+                <h3 style="margin-bottom: 6px;">Guaranteed Core Cash Flow First</h3>
+                <p style="margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.55;">We prioritize fixed and fixed-indexed lifetime annuities that floor non-negotiable monthly living expenses, shielding retirement from bear markets.</p>
+              </div>
+            </div>
+
+            <div class="philosophy-pillar-row">
+              <div class="pillar-num-badge">04</div>
+              <div>
+                <h3 style="margin-bottom: 6px;">Human + Digital Harmony</h3>
+                <p style="margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.55;">Modern client telemetry and real-time carrier yield tracking paired with dedicated, lifelong access to your licensed CFP® advisory team.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -263,29 +283,39 @@
           <p class="lead">Empowering retirees across the country with financial independence and peace of mind.</p>
         </div>
 
-        <div class="stats" style="margin-top: 0;">
-          <div class="stat">
-            <span class="kicker">CAPITAL UNDER PLAN</span>
-            <strong style="font-size: 2.2rem; color: var(--green);">$2.4B+</strong>
-            <small>Consolidated assets</small>
+        <div class="impact-modern-matrix">
+          <div class="impact-matrix-grid">
+            <div class="impact-matrix-cell">
+              <span class="kicker" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);">CAPITAL UNDER PLAN</span>
+              <strong style="font-size: 2.2rem; color: var(--green); display: block; margin: 6px 0 2px;">$2.4B+</strong>
+              <small style="color: var(--muted); font-size: 0.85rem;">Consolidated client assets</small>
+            </div>
+
+            <div class="impact-matrix-cell">
+              <span class="kicker" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);">RETIRED HOUSEHOLDS</span>
+              <strong style="font-size: 2.2rem; color: var(--green); display: block; margin: 6px 0 2px;">15,000+</strong>
+              <small style="color: var(--muted); font-size: 0.85rem;">Active income blueprints</small>
+            </div>
+
+            <div class="impact-matrix-cell">
+              <span class="kicker" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);">ANNUAL RETENTION</span>
+              <strong style="font-size: 2.2rem; color: var(--green); display: block; margin: 6px 0 2px;">99.4%</strong>
+              <small style="color: var(--muted); font-size: 0.85rem;">Fiduciary partnership rate</small>
+            </div>
+
+            <div class="impact-matrix-cell">
+              <span class="kicker" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);">SOLVENCY OVERSIGHT</span>
+              <strong style="font-size: 2.2rem; color: var(--green); display: block; margin: 6px 0 2px;">100%</strong>
+              <small style="color: var(--muted); font-size: 0.85rem;">AM Best A++ reserve filter</small>
+            </div>
           </div>
 
-          <div class="stat">
-            <span class="kicker">RETIRED CLIENTS</span>
-            <strong style="font-size: 2.2rem; color: var(--green);">15,000+</strong>
-            <small>Active client profiles</small>
-          </div>
-
-          <div class="stat">
-            <span class="kicker">RETENTION RATE</span>
-            <strong style="font-size: 2.2rem; color: var(--green);">99.4%</strong>
-            <small>Annual client renewal</small>
-          </div>
-
-          <div class="stat">
-            <span class="kicker">PORTAL ACCESS</span>
-            <strong style="font-size: 2.2rem; color: var(--green);">24/7</strong>
-            <small>Encrypted vault access</small>
+          <div class="impact-bottom-strip">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="color: var(--green); font-size: 1.2rem;">✓</span>
+              <span style="font-size: 0.88rem; color: var(--muted);">Independently audited compliance and carrier solvency metrics updated quarterly.</span>
+            </div>
+            <a href="services.html#diagnostic" class="btn btn-soft btn-sm">Request Fiduciary Audit Summary →</a>
           </div>
         </div>
       </div>
@@ -308,8 +338,8 @@
             <div class="team-card-body">
               <h3>Arthur Pendelton, CFP®</h3>
               <small>Founder & Chief Executive Officer</small>
-              <p>Former Managing Director at
-                BlackRock with 25+ years in annuity structuring and wealth preservation.</p>
+              <p>Former Managing Director at BlackRock with 25+ years in annuity structuring and wealth preservation.</p>
+              <a href="contact.html" class="btn btn-soft btn-sm" style="margin-top: auto; width: 100%; justify-content: center;">Contact Arthur's Desk →</a>
             </div>
           </div>
 
@@ -318,8 +348,8 @@
             <div class="team-card-body">
               <h3>Elena Rostova, CFA</h3>
               <small>Chief Investment & Risk Officer</small>
-              <p>Specializes in fixed income
-                portfolio modeling and carrier solvency stress testing.</p>
+              <p>Specializes in fixed income portfolio modeling, stress-testing, and carrier solvency reserve evaluations.</p>
+              <a href="services.html#advisors" class="btn btn-soft btn-sm" style="margin-top: auto; width: 100%; justify-content: center;">View Risk Methodology →</a>
             </div>
           </div>
 
@@ -328,22 +358,58 @@
             <div class="team-card-body">
               <h3>David Sterling, ChFC®</h3>
               <small>Head of Client Advisory Services</small>
-              <p>Leads a national network of
-                fiduciary advisors focused on customized retirement distribution strategies.</p>
+              <p>Leads a national network of fiduciary advisors focused on customized retirement distribution strategies.</p>
+              <a href="contact.html" class="btn btn-soft btn-sm" style="margin-top: auto; width: 100%; justify-content: center;">Schedule Client Consult →</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Bottom CTA Banner -->
+    <!-- SECTION 5: Executive Fiduciary Pledge & Leadership Direct Desk (UNIQUE TO ABOUT) -->
     <section class="section">
       <div class="container">
-        <div class="cta">
-          <div class="eyebrow" style="color:#a7d1bf">WORK WITH US</div>
-          <h2>Experience the Retira Difference</h2>
-          <p>Join thousands of retirees who enjoy complete confidence and guaranteed income visibility.</p>
-          <a class="btn btn-gold" href="signup.html">Create Your Profile</a>
+        <div class="about-pledge-cta">
+          <div class="pledge-content-wrap">
+            <div class="flagship-eyebrow" style="background: rgba(201, 167, 92, 0.2); color: #f0cc75; border-color: rgba(201, 167, 92, 0.4);">
+              📜 FOUNDER'S FIDUCIARY OATH
+            </div>
+            <h2 style="color: white; margin-bottom: 14px; font-size: clamp(1.8rem, 3.2vw, 2.6rem);">A Lifetime Promise of Client-First Protection</h2>
+            
+            <div class="pledge-quote-box">
+              "When we founded Retira, we swore an unyielding legal oath: never accept carrier sales commissions that cloud judgment, never recommend an annuity that does not serve the client first, and always stand between market panic and your life savings."
+            </div>
+
+            <div class="pledge-footer-row">
+              <div class="founder-signature-row">
+                <img class="founder-avatar-img" src="author.jfif" alt="Arthur Pendelton Founder & CEO">
+                <div>
+                  <strong style="color: white; display: block; font-size: 1.05rem;">Arthur Pendelton, CFP®</strong>
+                  <small style="color: #a5c3b9; font-size: 0.88rem;">Founder & Chief Executive Officer · Retira Advisory Group</small>
+                </div>
+              </div>
+
+              <div class="pledge-actions-group">
+                <a href="signup.html" class="btn btn-gold">Open Client Account →</a>
+                <a href="contact.html" class="btn btn-soft">Schedule Executive Consultation</a>
+              </div>
+            </div>
+
+            <div class="pledge-guarantees-strip">
+              <div class="pledge-guarantee-pill">
+                <span style="color: var(--gold);">🛡️</span>
+                <span>100% Fee-Only Fiduciary Standard</span>
+              </div>
+              <div class="pledge-guarantee-pill">
+                <span style="color: #34d399;">⚖️</span>
+                <span>Carrier-Agnostic Best Interest Standard</span>
+              </div>
+              <div class="pledge-guarantee-pill">
+                <span style="color: #60a5fa;">🔒</span>
+                <span>Zero Undisclosed Commissions</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -8,6 +8,11 @@
   <meta name="description"
     content="Explore Retira's core retirement planning services, educational resources, annuity tools, and certified advisor support.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
     .section-badge {
@@ -119,18 +124,40 @@
             </div>
           </div>
           <div>
-            <div class="page-hero-visual">
-              <div class="hero-chip-top">
-                <span class="status-dot"></span>
-                <span>5.45% Guaranteed APY Lock</span>
+            <div class="services-hero-deck">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                <span class="eyebrow" style="margin-bottom:0; font-size:0.75rem;">LIVE RIDER BENCHMARKS</span>
+                <span style="font-size:0.78rem; color:var(--green); font-weight:700;">Updated Daily</span>
               </div>
-              <div class="page-hero-img-wrap">
-                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
-                  alt="Financial advisor reviewing retirement plan with client">
+
+              <div class="services-rate-preview-item">
+                <div>
+                  <strong style="display:block; font-size:0.95rem;">5-Year Fixed MYGA Lock</strong>
+                  <small style="color:var(--muted);">New York Life · A++ AM Best</small>
+                </div>
+                <span class="yield-pill" style="font-size:0.95rem; padding:4px 12px;">5.65% APY</span>
               </div>
-              <div class="hero-chip-bottom">
-                <strong style="color: var(--green); display: block;">📊 30-Year Planning Engine</strong>
-                <small style="color: var(--muted);">Real-time cash flow & rider evaluation</small>
+
+              <div class="services-rate-preview-item">
+                <div>
+                  <strong style="display:block; font-size:0.95rem;">Zero-Loss Indexed Floor</strong>
+                  <small style="color:var(--muted);">MassMutual · S&P 500 Guard</small>
+                </div>
+                <span class="yield-pill" style="font-size:0.95rem; padding:4px 12px;">6.10% Cap</span>
+              </div>
+
+              <div class="services-rate-preview-item">
+                <div>
+                  <strong style="display:block; font-size:0.95rem;">Lifetime Guaranteed Rider</strong>
+                  <small style="color:var(--muted);">Allianz Life · Joint Spousal</small>
+                </div>
+                <span class="yield-pill" style="font-size:0.95rem; padding:4px 12px;">$2,250 / mo</span>
+              </div>
+
+              <div
+                style="margin-top:14px; padding-top:12px; border-top:1px solid var(--line); font-size:0.82rem; color:var(--muted); display:flex; align-items:center; gap:8px;">
+                <span style="color:var(--green);">✓</span>
+                <span>Audited carrier legal reserves exceed state statutory mandates</span>
               </div>
             </div>
           </div>
@@ -150,55 +177,127 @@
             flow.</p>
         </div>
 
-        <div class="grid-3">
-          <div class="card" id="income">
-            <div class="card-img">
-              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=85"
+        <div class="services-tier-architecture">
+          <!-- Flagship Hero Service: Guaranteed Lifetime Income Stream Architecture -->
+          <div class="services-flagship-showcase" id="income">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                <span
+                  style="font-weight: 800; font-size: 0.82rem; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase;">FLAGSHIP
+                  STRATEGY 01</span>
+                <span class="tag"
+                  style="background: rgba(45, 114, 91, 0.12); color: var(--green); font-size: 0.75rem;">100% PRINCIPAL
+                  GUARANTEE</span>
+              </div>
+              <h3 style="font-size: 1.65rem; margin-bottom: 12px; line-height: 1.25;">Retirement Income Stream
+                Architecture</h3>
+              <p style="color: var(--muted); font-size: 0.96rem; line-height: 1.6; margin-bottom: 20px;">
+                Transform unpredictable market balances into guaranteed, paycheck-style monthly cash flow. We
+                consolidate Social Security claiming timing, defined pensions, and top-tier fixed indexed annuities to
+                permanently floor your essential living costs.
+              </p>
+
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 24px;">
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 600;">
+                  <span style="color: var(--green);">✓</span> Guaranteed Lifetime Payout Floor
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 600;">
+                  <span style="color: var(--green);">✓</span> Annual Inflation (COLA) Adjusters
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 600;">
+                  <span style="color: var(--green);">✓</span> Sequence-of-Returns Immunity
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 0.88rem; font-weight: 600;">
+                  <span style="color: var(--green);">✓</span> Joint Spousal Continuation Lock
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+                <a class="btn btn-primary" href="home.html#calculator">Model Cash Flow Stream →</a>
+                <a class="btn btn-soft" href="contact.html">Request Income Diagnostic</a>
+              </div>
+            </div>
+
+            <div class="services-flagship-img-wrap">
+              <img src="https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?auto=format&fit=crop&w=1200&q=85"
                 alt="Retirement income optimization and cash flow mapping">
+              <div class="services-flagship-badge">
+                <span style="color: #34d399; font-size: 1rem;">🛡️</span>
+                <span>Audited 100% Principal Protection Floor</span>
+              </div>
             </div>
-            <div class="icon">01</div>
-            <h3>Retirement Income Optimization</h3>
-            <p>Consolidate Social Security benefits, pension payouts, annuities, and investment withdrawals into a
-              single cash-flow stream.</p>
-            <div class="feature-list">
-              <div class="feature-item"><span class="feature-check">✓</span> Guaranteed cash flow mapping</div>
-              <div class="feature-item"><span class="feature-check">✓</span> Inflation protection adjustments</div>
-            </div>
-            <a class="btn btn-soft" href="dashboard.html"
-              style="margin-top:auto; width:100%; justify-content:center;">View Income Dashboard →</a>
           </div>
 
-          <div class="card" id="annuities">
-            <div class="card-img">
-              <img src="manage.jpg" alt="Annuity contract management and rate locks">
+          <!-- Dual Targeted Companion Services Rail -->
+          <div class="services-rail-grid">
+            <div class="service-horizontal-console" id="annuities">
+              <div>
+                <div
+                  style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                  <span
+                    style="font-weight: 800; font-size: 0.8rem; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase;">SPECIALIZED
+                    STRATEGY 02</span>
+                  <span
+                    style="font-size: 0.78rem; font-weight: 700; color: var(--green); background: rgba(45,114,91,0.1); padding: 4px 10px; border-radius: 6px;">CONTRACT
+                    AUDIT</span>
+                </div>
+                <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Annuity Contract & Fee Diagnostic</h3>
+                <p style="color: var(--muted); font-size: 0.92rem; line-height: 1.55; margin-bottom: 18px;">
+                  Deep forensic audit of your existing fixed, indexed, or variable annuity policies. We uncover hidden
+                  rider fees, mortality charges, surrender charge cliffs, and compare against current A++ carrier rates.
+                </p>
+                <div
+                  style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; font-size: 0.86rem; color: var(--ink);">
+                  <div style="display: flex; align-items: center; gap: 8px;"><span style="color: var(--green);">✓</span>
+                    Complete rider cost vs benefit breakdown</div>
+                  <div style="display: flex; align-items: center; gap: 8px;"><span style="color: var(--green);">✓</span>
+                    1035 tax-free exchange yield comparison</div>
+                </div>
+              </div>
+              <a class="btn btn-primary btn-sm" href="home.html#rates"
+                style="width: 100%; justify-content: center;">Compare Annuity Rate Locks →</a>
             </div>
-            <div class="icon">02</div>
-            <h3>Annuity Contract Management</h3>
-            <p>Organize existing fixed, indexed, or deferred annuity contracts with complete visibility into rates and
-              payout schedules.</p>
-            <div class="feature-list">
-              <div class="feature-item"><span class="feature-check">✓</span> Rate locks & rider summaries</div>
-              <div class="feature-item"><span class="feature-check">✓</span> Annuitization date tracking</div>
-            </div>
-            <a class="btn btn-soft" href="dashboard.html"
-              style="margin-top:auto; width:100%; justify-content:center;">Explore Annuity Vault →</a>
-          </div>
 
-          <div class="card" id="legacy">
-            <div class="card-img">
-              <img src="protection.avif" alt="Legacy and estate protection for family priorities">
+            <div class="service-horizontal-console" id="legacy">
+              <div>
+                <div
+                  style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                  <span
+                    style="font-weight: 800; font-size: 0.8rem; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase;">SPECIALIZED
+                    STRATEGY 03</span>
+                  <span
+                    style="font-size: 0.78rem; font-weight: 700; color: var(--green); background: rgba(45,114,91,0.1); padding: 4px 10px; border-radius: 6px;">FAMILY
+                    WEALTH</span>
+                </div>
+                <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Spousal Legacy & Estate Transfer</h3>
+                <p style="color: var(--muted); font-size: 0.92rem; line-height: 1.55; margin-bottom: 18px;">
+                  Protect your surviving spouse and beneficiaries from unnecessary tax erosion and probate delays. We
+                  structure beneficiary cascading, enhanced death benefit riders, and seamless trust funding.
+                </p>
+                <div
+                  style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; font-size: 0.86rem; color: var(--ink);">
+                  <div style="display: flex; align-items: center; gap: 8px;"><span style="color: var(--green);">✓</span>
+                    Direct probate bypass designations</div>
+                  <div style="display: flex; align-items: center; gap: 8px;"><span style="color: var(--green);">✓</span>
+                    Tax-deferred multi-generational transfer</div>
+                </div>
+              </div>
+              <a class="btn btn-primary btn-sm" href="contact.html"
+                style="width: 100%; justify-content: center;">Schedule Estate Review →</a>
             </div>
-            <div class="icon">03</div>
-            <h3>Legacy & Estate Protection</h3>
-            <p>Ensure your spouse and beneficiaries are protected with structured beneficiary designations and
-              tax-efficient transfer strategies.</p>
-            <div class="feature-list">
-              <div class="feature-item"><span class="feature-check">✓</span> Primary & contingent reviews</div>
-              <div class="feature-item"><span class="feature-check">✓</span> Estate document vaulting</div>
-            </div>
-            <a class="btn btn-soft" href="dashboard.html"
-              style="margin-top:auto; width:100%; justify-content:center;">Review Beneficiaries →</a>
           </div>
+        </div>
+
+        <div class="service-next-step-bar">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span style="font-size: 1.4rem;">💡</span>
+            <div>
+              <strong style="display: block; font-size: 0.96rem;">Unsure Which Service Matches Your Timeline?</strong>
+              <span style="font-size: 0.86rem; color: var(--muted);">Our fiduciary specialists review your existing
+                contracts and accounts at no cost.</span>
+            </div>
+          </div>
+          <a href="#diagnostic" class="btn btn-gold btn-sm">Request Free Fiduciary Audit →</a>
         </div>
       </div>
     </section>
@@ -215,42 +314,105 @@
             decisions.</p>
         </div>
 
-        <div class="grid-3">
-          <div class="card">
-            <div class="card-img">
-              <img src="cashflow.jfif" alt="Retirement cash flow planning checklist">
+        <div class="toolkit-station-layout">
+          <!-- Interactive Simulator Launchpad Panel -->
+          <div class="toolkit-hero-panel">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                <span class="tag"
+                  style="background: rgba(201,167,92,0.25); color: var(--gold); font-size: 0.78rem;">INTERACTIVE CLIENT
+                  STUDIO</span>
+                <span style="font-size: 0.8rem; color: #a9c7bf;">Instant Browser Execution</span>
+              </div>
+              <h3 style="font-size: 1.6rem; color: white; margin-bottom: 12px;">What-If Stress Simulator Studio</h3>
+              <p style="color: #c4dcd5; font-size: 0.94rem; line-height: 1.6; margin-bottom: 22px;">
+                Model custom economic scenarios in real time. Simulate retiring at age 62 vs 67, test the impact of a 4%
+                persistent inflation surge, or examine portfolio longevity through consecutive bear markets.
+              </p>
+
+              <div style="display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;">
+                <div
+                  style="background: rgba(255,255,255,0.06); padding: 10px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12);">
+                  <span style="display: block; font-size: 0.75rem; color: #a9c7bf;">SCENARIOS</span>
+                  <strong style="color: #34d399; font-size: 1.1rem;">1,000+ Cycles</strong>
+                </div>
+                <div
+                  style="background: rgba(255,255,255,0.06); padding: 10px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12);">
+                  <span style="display: block; font-size: 0.75rem; color: #a9c7bf;">CAPITAL ACCURACY</span>
+                  <strong style="color: white; font-size: 1.1rem;">99.8%</strong>
+                </div>
+                <div
+                  style="background: rgba(255,255,255,0.06); padding: 10px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12);">
+                  <span style="display: block; font-size: 0.75rem; color: #a9c7bf;">ACCESS</span>
+                  <strong style="color: var(--gold); font-size: 1.1rem;">Immediate</strong>
+                </div>
+              </div>
             </div>
-            <div class="section-badge">CHECKLIST</div>
-            <h3>Retirement Cash Flow Checklist</h3>
-            <p>A step-by-step workbook for categorizing essential vs discretionary monthly expenses before retirement.
-            </p>
-            <a href="dashboard.html" class="btn btn-soft"
-              style="margin-top:auto; width:100%; justify-content:center;">Download Checklist (PDF)</a>
+
+            <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+              <a href="home.html#calculator" class="btn btn-primary" style="flex: 1; justify-content: center;">🚀 Launch
+                What-If Simulator</a>
+              <a href="signup.html" class="btn btn-soft"
+                style="color: white; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.08);">Save
+                Model</a>
+            </div>
           </div>
 
-          <div class="card">
-            <div class="card-img">
-              <img src="simulator.webp" alt="Interactive What-If Scenario Simulator">
+          <!-- Downloadable Toolkits & Fiduciary Workbooks Stack -->
+          <div class="toolkit-stack-panel">
+            <div class="toolkit-download-row">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <div
+                  style="width: 48px; height: 48px; border-radius: 14px; background: rgba(45,114,91,0.12); color: var(--green); display: grid; place-items: center; font-size: 1.3rem; flex-shrink: 0;">
+                  📥
+                </div>
+                <div>
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                    <span
+                      style="font-size: 0.75rem; font-weight: 800; color: var(--gold); text-transform: uppercase;">WORKBOOK
+                      [PDF + XLS]</span>
+                  </div>
+                  <h4 style="margin: 0 0 4px; font-size: 1.05rem;">Retirement Cash Flow Checklist</h4>
+                  <p style="margin: 0; color: var(--muted); font-size: 0.85rem;">Step-by-step audit categorizing
+                    essential living vs discretionary monthly expenses.</p>
+                </div>
+              </div>
+              <a href="dashboard.html" class="btn btn-primary btn-sm" style="flex-shrink: 0;">Download PDF ↗</a>
             </div>
-            <div class="section-badge">INTERACTIVE TOOL</div>
-            <h3>What-If Scenario Simulator</h3>
-            <p>Model how retiring at age 62 vs 67 or adjusting inflation assumptions impacts your long-term capital
-              balance.</p>
-            <a href="dashboard.html" class="btn btn-soft"
-              style="margin-top:auto; width:100%; justify-content:center;">Launch Scenario Simulator</a>
-          </div>
 
-          <div class="card">
-            <div class="card-img">
-              <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1400&q=85"
-                alt="Document Organization Vault">
+            <div class="toolkit-download-row">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <div
+                  style="width: 48px; height: 48px; border-radius: 14px; background: rgba(45,114,91,0.12); color: var(--green); display: grid; place-items: center; font-size: 1.3rem; flex-shrink: 0;">
+                  🔐
+                </div>
+                <div>
+                  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                    <span
+                      style="font-size: 0.75rem; font-weight: 800; color: var(--green); text-transform: uppercase;">256-BIT
+                      ENCRYPTED</span>
+                  </div>
+                  <h4 style="margin: 0 0 4px; font-size: 1.05rem;">Fiduciary Document Vault Blueprint</h4>
+                  <p style="margin: 0; color: var(--muted); font-size: 0.85rem;">Secure organization framework for
+                    annuity policies, IRA records, and family wills.</p>
+                </div>
+              </div>
+              <a href="login.html" class="btn btn-soft btn-sm" style="flex-shrink: 0;">Access Vault ↗</a>
             </div>
-            <div class="section-badge">GUIDE</div>
-            <h3>Document Vault Blueprint</h3>
-            <p>Learn how to securely store IRA statements, annuity contracts, and wills for seamless family access.</p>
-            <a href="dashboard.html" class="btn btn-soft"
-              style="margin-top:auto; width:100%; justify-content:center;">Open Document Vault</a>
           </div>
+        </div>
+
+        <div class="service-next-step-bar">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span style="font-size: 1.4rem;">📊</span>
+            <div>
+              <strong style="display: block; font-size: 0.96rem;">Need Custom Projections Built for Your
+                Household?</strong>
+              <span style="font-size: 0.86rem; color: var(--muted);">We stress-test your numbers across 1,000+
+                historical inflation and bear-market cycles.</span>
+            </div>
+          </div>
+          <a href="signup.html" class="btn btn-primary btn-sm">Build Custom Model →</a>
         </div>
       </div>
     </section>
@@ -267,55 +429,161 @@
             Financial Analysts (CFA).</p>
         </div>
 
-        <div class="advisor-card-grid">
-          <div class="card">
-            <div class="advisor-profile-header">
-              <img class="advisor-img"
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=85"
-                alt="Sarah Johnson CFP">
-              <div>
-                <h3 style="margin-bottom:4px;">Sarah Johnson, CFP®</h3>
-                <small style="color:var(--green); font-weight:700;">Senior Retirement Income Specialist</small>
+        <div class="advisory-council-layout">
+          <div class="advisor-executive-profile">
+            <img class="advisor-executive-photo"
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=85"
+              alt="Sarah Johnson CFP">
+            <div style="flex: 1;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; flex-wrap: wrap; gap: 6px;">
+                <h3 style="margin: 0; font-size: 1.25rem;">Sarah Johnson, CFP®</h3>
+                <span
+                  style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 700; color: var(--green); background: rgba(45,114,91,0.1); padding: 3px 8px; border-radius: 6px;">
+                  <span style="width: 6px; height: 6px; border-radius: 50%; background: #34d399;"></span> Available
+                  Tomorrow
+                </span>
               </div>
-            </div>
-            <p>15+ years experience structuring fixed income annuities, pension rollovers, and tax-efficient withdrawal
-              strategies for retirees.</p>
-            <div style="margin-top:16px; display:flex; gap:10px;">
-              <a href="contact.html" class="btn btn-primary btn-sm">Book Call with Sarah</a>
-              <a href="dashboard.html" class="btn btn-soft btn-sm">View Availability</a>
+              <div style="color: var(--green); font-size: 0.86rem; font-weight: 700; margin-bottom: 10px;">Senior
+                Retirement Income Specialist</div>
+              <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.55; margin-bottom: 18px;">
+                15+ years experience structuring fixed income annuities, pension rollovers, and tax-efficient withdrawal
+                strategies for pre-retirees and retirees.
+              </p>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="contact.html?advisor=sarah" class="btn btn-primary btn-sm">Book Strategy Session with Sarah
+                  →</a>
+                <a href="dashboard.html" class="btn btn-soft btn-sm">View Calendar</a>
+              </div>
             </div>
           </div>
 
-          <div class="card">
-            <div class="advisor-profile-header">
-              <img class="advisor-img"
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=85"
-                alt="Marcus Vance CFA">
-              <div>
-                <h3 style="margin-bottom:4px;">Marcus Vance, CFA</h3>
-                <small style="color:var(--green); font-weight:700;">Annuities & Fixed Income Strategist</small>
+          <div class="advisor-executive-profile">
+            <img class="advisor-executive-photo"
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=85"
+              alt="Marcus Vance CFA">
+            <div style="flex: 1;">
+              <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; flex-wrap: wrap; gap: 6px;">
+                <h3 style="margin: 0; font-size: 1.25rem;">Marcus Vance, CFA</h3>
+                <span
+                  style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 700; color: var(--green); background: rgba(45,114,91,0.1); padding: 3px 8px; border-radius: 6px;">
+                  <span style="width: 6px; height: 6px; border-radius: 50%; background: #34d399;"></span> Available
+                  Today
+                </span>
+              </div>
+              <div style="color: var(--green); font-size: 0.86rem; font-weight: 700; margin-bottom: 10px;">Annuities &
+                Fixed Income Strategist</div>
+              <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.55; margin-bottom: 18px;">
+                Specializes in evaluating carrier statutory balance sheets, rating agency solvency metrics, and
+                optimizing rider fees across changing interest rate regimes.
+              </p>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="contact.html?advisor=marcus" class="btn btn-primary btn-sm">Book Strategy Session with Marcus
+                  →</a>
+                <a href="dashboard.html" class="btn btn-soft btn-sm">View Calendar</a>
               </div>
             </div>
-            <p>Specializes in evaluating carrier solvency, annuity rider options, and optimizing asset allocation models
-              across market cycles.</p>
-            <div style="margin-top:16px; display:flex; gap:10px;">
-              <a href="contact.html" class="btn btn-primary btn-sm">Book Call with Marcus</a>
-              <a href="dashboard.html" class="btn btn-soft btn-sm">View Availability</a>
+          </div>
+        </div>
+
+        <div class="service-next-step-bar">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span style="font-size: 1.4rem;">🤝</span>
+            <div>
+              <strong style="display: block; font-size: 0.96rem;">100% Fee-Only Fiduciary Promise</strong>
+              <span style="font-size: 0.86rem; color: var(--muted);">Our advisors earn zero commissions from
+                insurers—ensuring recommendations are 100% unbiased.</span>
             </div>
           </div>
+          <a href="#diagnostic" class="btn btn-primary btn-sm">Book Fiduciary Consultation →</a>
         </div>
       </div>
     </section>
 
-    <!-- Bottom CTA Banner -->
+    <!-- SECTION 4: Fiduciary Diagnostic & Fee Audit Console (UNIQUE TO SERVICES) -->
     <section class="section">
       <div class="container">
-        <div class="cta">
-          <div class="eyebrow" style="color:#a7d1bf">READY TO PLAN?</div>
-          <h2>Connect Your Income Sources Today</h2>
-          <p>Create your free client profile to explore customized retirement calculations and meet your dedicated
-            advisor.</p>
-          <a class="btn btn-gold" href="signup.html">Get Started Now</a>
+        <div class="services-diagnostic-cta">
+          <div class="diagnostic-grid">
+            <div>
+              <div class="eyebrow" style="background: rgba(45,114,91,0.12); color: var(--green);">🩺 COMPLIMENTARY
+                FIDUCIARY AUDIT</div>
+              <h2 style="margin-bottom: 12px;">Request a Fiduciary Contract & Fee Diagnostic</h2>
+              <p class="lead" style="margin-bottom: 22px;">
+                Already hold an annuity, IRA, or 401(k)? Our chartered specialists will audit surrender charges, hidden
+                mortality fees, and carrier ratings at zero cost.
+              </p>
+
+              <div class="diagnostic-deliverables">
+                <div class="diagnostic-deliv-item">
+                  <span style="font-size: 1.2rem;">🔍</span>
+                  <div>
+                    <strong>Surrender Charge & Rider Fee Inspection</strong>
+                    <div style="font-size: 0.84rem; color: var(--muted);">Identify hidden contract expenses eroding your
+                      compound growth.</div>
+                  </div>
+                </div>
+
+                <div class="diagnostic-deliv-item">
+                  <span style="font-size: 1.2rem;">🔄</span>
+                  <div>
+                    <strong>1035 Direct Tax-Free Rollover Viability</strong>
+                    <div style="font-size: 0.84rem; color: var(--muted);">Assess whether modern high-yield MYGAs offer
+                      superior guaranteed cash flow.</div>
+                  </div>
+                </div>
+
+                <div class="diagnostic-deliv-item">
+                  <span style="font-size: 1.2rem;">🛡️</span>
+                  <div>
+                    <strong>State Guaranty Association Limit Check</strong>
+                    <div style="font-size: 0.84rem; color: var(--muted);">Structure contracts across top carriers to
+                      maximize state statutory protections.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="diagnostic-card-form">
+                <h3 style="font-size: 1.15rem; margin-bottom: 14px;">Schedule Diagnostic Review</h3>
+                <form id="diagnosticForm"
+                  onsubmit="event.preventDefault(); alert('✓ Diagnostic request received! A fiduciary CFP® specialist will contact you within 1 business day.'); this.reset();">
+                  <div class="diag-field-group">
+                    <label for="diagSpecialist">Select Advisory Specialist</label>
+                    <select id="diagSpecialist" class="diag-select">
+                      <option value="sarah">Sarah Johnson, CFP® (Income Optimization)</option>
+                      <option value="marcus">Marcus Vance, CFA (Carrier Risk & MYGA)</option>
+                    </select>
+                  </div>
+
+                  <div class="diag-field-group">
+                    <label for="diagContractType">Review Focus</label>
+                    <select id="diagContractType" class="diag-select">
+                      <option value="annuity">Existing Annuity Fee & Rider Audit</option>
+                      <option value="rollover">401(k) / IRA Tax-Free 1035 Rollover</option>
+                      <option value="gap">Income Gap & Social Security Floor</option>
+                    </select>
+                  </div>
+
+                  <div class="diag-field-group">
+                    <label for="diagEmail">Your Email Address</label>
+                    <input type="email" id="diagEmail" class="diag-input" placeholder="name@example.com" required>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary"
+                    style="width: 100%; justify-content: center; height: 42px; margin-top: 10px;">
+                    Confirm Complimentary Audit →
+                  </button>
+
+                  <div style="text-align: center; margin-top: 12px; font-size: 0.78rem; color: var(--muted);">
+                    🔒 256-Bit Encrypted · Fiduciary Oath · Zero Sales Pressure
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

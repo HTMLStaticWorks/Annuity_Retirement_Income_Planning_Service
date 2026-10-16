@@ -200,6 +200,11 @@ function initGapCalculator() {
     const gapNeeded = Math.max(0, expense - socSec);
     if (gapResultVal) gapResultVal.textContent = "$" + gapNeeded.toLocaleString() + " / mo";
 
+    const socSecSub = document.getElementById("gapSocSecSub");
+    const annuitySub = document.getElementById("gapAnnuitySub");
+    if (socSecSub) socSecSub.textContent = "$" + socSec.toLocaleString();
+    if (annuitySub) annuitySub.textContent = "$" + gapNeeded.toLocaleString();
+
     const coverage = Math.min(100, Math.round((socSec / expense) * 100));
     if (gapCoveragePct) gapCoveragePct.textContent = coverage + "% Base Floor Coverage";
   };

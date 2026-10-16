@@ -8,6 +8,9 @@
   <meta name="description"
     content="Get in touch with Retira's retirement planning experts. Schedule a consultation, locate our headquarters, or send a secure inquiry.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
     .contact-layout {
@@ -31,42 +34,88 @@
       box-shadow: 0 10px 30px rgba(20, 49, 59, 0.06);
     }
 
-    .channels-grid {
+    .channels-modern-console {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-top: 24px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 32px;
+      margin-top: 28px;
+      align-items: stretch;
     }
 
     @media (max-width: 960px) {
-      .channels-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 540px) {
-      .channels-grid {
+      .channels-modern-console {
         grid-template-columns: 1fr;
       }
     }
 
-    .channel-box {
+    .channels-concierge-panel {
+      background: linear-gradient(135deg, #132d36 0%, #1c4238 100%);
+      border: 1px solid rgba(201, 167, 92, 0.35);
+      border-radius: 24px;
+      padding: 36px 32px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 16px 45px rgba(20, 49, 59, 0.15);
+    }
+
+    [data-theme="dark"] .channels-concierge-panel {
+      background: linear-gradient(135deg, #09171c 0%, #112d26 100%);
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+
+    .channels-list-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .channel-strip-item {
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 22px;
+      border-radius: 18px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      transition: all 0.25s ease;
+    }
+
+    .channel-strip-item:hover {
+      border-color: var(--green);
+      transform: translateX(6px);
+      box-shadow: 0 8px 24px rgba(45, 114, 91, 0.08);
+    }
+
+    [dir="rtl"] .channel-strip-item:hover {
+      transform: translateX(-6px);
+    }
+
+    [data-theme="dark"] .channel-strip-item {
+      background: #132a32;
+      border-color: #1d3d35;
+    }
+
+    [data-theme="dark"] .channel-strip-item:hover {
+      border-color: #34d399;
     }
 
     .channel-icon {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 12px;
       background: var(--sage);
       color: var(--green);
       display: grid;
       place-items: center;
-      font-size: 1.2rem;
-      margin-bottom: 14px;
+      font-size: 1.25rem;
+    }
+
+    [data-theme="dark"] .channel-icon {
+      background: rgba(52, 211, 153, 0.15);
+      color: #34d399;
     }
 
     /* Map UI Integration */
@@ -424,29 +473,75 @@
           <p class="lead">Multiple ways to connect with our advisory specialists nationwide.</p>
         </div>
 
-        <div class="channels-grid">
-          <div class="channel-box">
-            <div class="channel-icon">📍</div>
-            <h3>National HQ</h3>
-            <p>75 Rockefeller Plaza<br>Suite 1400<br>New York, NY 10019</p>
+        <div class="channels-modern-console">
+          <div class="channels-concierge-panel">
+            <div>
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #34d399; box-shadow: 0 0 10px #34d399;"></span>
+                <span class="kicker" style="color: var(--gold); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;">Direct Advisory Concierge</span>
+              </div>
+              <h3 style="color: white; font-size: 1.55rem; margin-bottom: 10px;">Immediate Fiduciary Access</h3>
+              <p style="color: #c4dcd5; font-size: 0.94rem; line-height: 1.6; margin-bottom: 24px;">Our licensed advisory team answers directly without automated phone trees. Whether you require contract reviews or immediate retirement income answers, we are on standby.</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.06); border-radius: 16px; padding: 18px 20px; border: 1px solid rgba(255,255,255,0.12);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-size: 0.85rem; color: #a9c7bf;">Advisory Desk Hours:</span>
+                <span style="font-size: 0.85rem; font-weight: 700; color: #34d399;">Active Now</span>
+              </div>
+              <div style="font-size: 0.95rem; font-weight: 600; color: white;">Mon – Fri: 8:00 AM – 7:00 PM EST</div>
+              <div style="font-size: 0.85rem; color: #a9c7bf; margin-top: 4px;">Saturday: 9:00 AM – 2:00 PM EST</div>
+              <div style="margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="tel:8005557384" class="btn btn-primary btn-sm" style="flex: 1; justify-content: center;">Call (800) 555-RETIRA</a>
+                <a href="#locations" class="btn btn-soft btn-sm" style="color: white; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.08);">Headquarters Map ↓</a>
+              </div>
+            </div>
           </div>
 
-          <div class="channel-box">
-            <div class="channel-icon">📞</div>
-            <h3>Telephone Line</h3>
-            <p>Main: (800) 555-RETIRA<br>Direct: (212) 555-8820<br>Fax: (212) 555-8821</p>
-          </div>
+          <div class="channels-list-stack">
+            <div class="channel-strip-item">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="channel-icon">📍</div>
+                <div>
+                  <h4 style="margin: 0 0 4px; font-size: 1.05rem;">Rockefeller Plaza Headquarters</h4>
+                  <p style="margin: 0; color: var(--muted); font-size: 0.88rem;">75 Rockefeller Plaza, Suite 1400, New York, NY 10019</p>
+                </div>
+              </div>
+              <a href="https://maps.google.com/?q=75+Rockefeller+Plaza,+New+York,+NY+10019" target="_blank" rel="noopener" class="btn btn-soft btn-sm" style="flex-shrink: 0;">Directions ↗</a>
+            </div>
 
-          <div class="channel-box">
-            <div class="channel-icon">🕒</div>
-            <h3>Business Hours</h3>
-            <p>Mon - Fri: 8:00 AM - 7:00 PM EST<br>Saturday: 9:00 AM - 2:00 PM EST<br>Sunday: Closed</p>
-          </div>
+            <div class="channel-strip-item">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="channel-icon">📞</div>
+                <div>
+                  <h4 style="margin: 0 0 4px; font-size: 1.05rem;">Direct Telephone & Dedicated Fax</h4>
+                  <p style="margin: 0; color: var(--muted); font-size: 0.88rem;">Toll-Free: (800) 555-7384 • Direct: (212) 555-8820</p>
+                </div>
+              </div>
+              <a href="tel:8005557384" class="btn btn-soft btn-sm" style="flex-shrink: 0;">Call Now 📞</a>
+            </div>
 
-          <div class="channel-box">
-            <div class="channel-icon">📅</div>
-            <h3>Virtual Review</h3>
-            <p>1-on-1 HD Video Calls<br>Available Mon - Sat<br>Booked via Client Portal</p>
+            <div class="channel-strip-item">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="channel-icon">📅</div>
+                <div>
+                  <h4 style="margin: 0 0 4px; font-size: 1.05rem;">Virtual 1-on-1 HD Video Reviews</h4>
+                  <p style="margin: 0; color: var(--muted); font-size: 0.88rem;">Screen-share contract reviews via encrypted client portal</p>
+                </div>
+              </div>
+              <a href="dashboard.html" class="btn btn-primary btn-sm" style="flex-shrink: 0;">Schedule Review →</a>
+            </div>
+
+            <div class="channel-strip-item">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <div class="channel-icon">🔒</div>
+                <div>
+                  <h4 style="margin: 0 0 4px; font-size: 1.05rem;">Secure Client Document Vault</h4>
+                  <p style="margin: 0; color: var(--muted); font-size: 0.88rem;">Encrypted upload for existing annuity & pension paperwork</p>
+                </div>
+              </div>
+              <a href="login.html" class="btn btn-soft btn-sm" style="flex-shrink: 0;">Access Portal ↗</a>
+            </div>
           </div>
         </div>
       </div>
