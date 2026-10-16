@@ -66,6 +66,9 @@
     .dash-avatar {
       width: 28px;
       height: 28px;
+      min-width: 28px;
+      min-height: 28px;
+      aspect-ratio: 1 / 1;
       border-radius: 50%;
       background: var(--green);
       color: white;
@@ -73,6 +76,7 @@
       place-items: center;
       font-size: 0.75rem;
       font-weight: 800;
+      flex-shrink: 0;
     }
 
     /* Notification Bell */
@@ -100,6 +104,22 @@
       color: white;
     }
 
+    [data-theme="dark"] .dash-avatar {
+      background: #236852 !important;
+      color: #ffffff !important;
+    }
+
+    [data-theme="dark"] .icon-btn {
+      background: rgba(52, 211, 153, 0.15) !important;
+      border-color: rgba(52, 211, 153, 0.28) !important;
+      color: #34d399 !important;
+    }
+
+    [data-theme="dark"] .icon-btn:hover {
+      background: #34d399 !important;
+      color: #0c1d23 !important;
+    }
+
     .icon-badge {
       position: absolute;
       top: -2px;
@@ -119,38 +139,58 @@
     /* Interactive Chart Extensions */
     .chart-container {
       position: relative;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .chart-filter-actions {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
     }
 
     .chart-bars-wrap {
       height: 240px;
       display: flex;
       align-items: flex-end;
+      justify-content: space-between;
       gap: 16px;
-      padding: 20px 8px 10px;
+      padding: 24px 8px 10px;
       border-bottom: 1px solid var(--line);
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .chart-col {
-      flex: 1;
+      flex: 1 1 0;
+      min-width: 0;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       height: 100%;
       position: relative;
       cursor: pointer;
+      outline: none;
+      box-sizing: border-box;
     }
 
     .chart-col-group {
       width: 100%;
+      max-width: 44px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       border-radius: 8px 8px 3px 3px;
       overflow: hidden;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, filter 0.2s ease;
     }
 
-    .chart-col:hover .chart-col-group {
+    .chart-col:hover .chart-col-group,
+    .chart-col:focus .chart-col-group,
+    .chart-col.active .chart-col-group {
       transform: translateY(-4px);
+      filter: brightness(1.1);
     }
 
     .chart-seg-annuity {
@@ -171,6 +211,9 @@
       color: var(--muted);
       margin-top: 8px;
       font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .chart-tooltip {
@@ -187,12 +230,205 @@
       white-space: nowrap;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.2s ease;
-      z-index: 10;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 20;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
     }
 
-    .chart-col:hover .chart-tooltip {
+    .chart-col:hover .chart-tooltip,
+    .chart-col:focus .chart-tooltip,
+    .chart-col.active .chart-tooltip {
       opacity: 1;
+    }
+
+    .chart-col:first-child .chart-tooltip {
+      left: 0;
+      transform: translateX(0);
+    }
+
+    .chart-col:last-child .chart-tooltip {
+      left: auto;
+      right: 0;
+      transform: translateX(0);
+    }
+
+    .chart-legend-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      font-size: 0.84rem;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chart-milestone-box {
+      margin-top: 18px;
+      padding: 14px 18px;
+      background: rgba(45, 114, 91, 0.08);
+      border-radius: 14px;
+      border: 1px solid rgba(45, 114, 91, 0.18);
+      font-size: 0.88rem;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    [data-theme="dark"] .chart-milestone-box {
+      background: rgba(52, 211, 153, 0.14) !important;
+      border-color: rgba(52, 211, 153, 0.28) !important;
+      color: #34d399 !important;
+    }
+
+    /* Responsive Chart Adaptations for Tablets and Mobile Phones */
+    @media (max-width: 768px) {
+      #plan-card {
+        padding: 20px 14px !important;
+        border-radius: 18px !important;
+        box-sizing: border-box;
+      }
+
+      #plan-card .section-head {
+        margin-bottom: 12px;
+      }
+
+      #plan-card .section-head h2 {
+        font-size: 1.35rem !important;
+        line-height: 1.3;
+      }
+
+      .chart-filter-actions {
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .chart-filter-actions .btn {
+        padding: 6px 12px;
+        font-size: 0.82rem;
+      }
+
+      .chart-bars-wrap {
+        height: 205px;
+        gap: 8px;
+        padding: 20px 4px 8px;
+      }
+
+      .chart-col-group {
+        max-width: 34px;
+        border-radius: 6px 6px 2px 2px;
+      }
+
+      .chart-label {
+        font-size: 0.7rem;
+        margin-top: 6px;
+        letter-spacing: -0.02em;
+      }
+
+      .chart-tooltip {
+        font-size: 0.68rem;
+        padding: 4px 8px;
+        top: -38px;
+      }
+
+      .chart-col:first-child .chart-tooltip {
+        left: 0;
+        transform: translateX(0);
+      }
+
+      .chart-col:last-child .chart-tooltip {
+        left: auto;
+        right: 0;
+        transform: translateX(0);
+      }
+
+      .chart-legend-grid {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        margin-top: 14px !important;
+        font-size: 0.8rem !important;
+      }
+
+      .chart-milestone-box {
+        margin-top: 14px !important;
+        padding: 12px 14px !important;
+        font-size: 0.84rem !important;
+        line-height: 1.45;
+      }
+    }
+
+    @media (max-width: 440px) {
+      #plan-card {
+        padding: 16px 10px !important;
+      }
+
+      #plan-card .section-head h2 {
+        font-size: 1.18rem !important;
+      }
+
+      .chart-filter-actions {
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+
+      .chart-filter-actions .btn {
+        flex: 1 1 auto;
+        justify-content: center;
+        padding: 6px 8px;
+        font-size: 0.74rem;
+        white-space: nowrap;
+      }
+
+      .chart-bars-wrap {
+        height: 185px;
+        gap: 4px;
+        padding: 18px 2px 6px;
+      }
+
+      .chart-col-group {
+        max-width: 24px;
+        border-radius: 4px 4px 2px 2px;
+      }
+
+      .chart-label {
+        font-size: 0.62rem;
+        margin-top: 5px;
+        letter-spacing: -0.04em;
+      }
+
+      .chart-tooltip {
+        font-size: 0.62rem;
+        padding: 3px 6px;
+        top: -34px;
+      }
+
+      .chart-legend-grid {
+        font-size: 0.76rem !important;
+        gap: 6px !important;
+      }
+
+      .chart-milestone-box {
+        padding: 10px 12px !important;
+        font-size: 0.8rem !important;
+      }
+    }
+
+    @media (max-width: 340px) {
+      #plan-card {
+        padding: 14px 6px !important;
+      }
+
+      .chart-bars-wrap {
+        gap: 3px;
+        height: 175px;
+      }
+
+      .chart-col-group {
+        max-width: 20px;
+      }
+
+      .chart-label {
+        font-size: 0.58rem;
+      }
     }
 
     /* Modal Backdrop & Dialog */
@@ -278,11 +514,11 @@
       opacity: 1;
     }
 
-    /* Advisor Badge Box */
+    /* Advisor Profile Box */
     .advisor-profile-box {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       padding: 16px;
       background: var(--cream);
       border-radius: 16px;
@@ -291,16 +527,25 @@
     }
 
     .advisor-avatar-lg {
-      width: 52px;
-      height: 52px;
+      width: 56px;
+      height: 56px;
+      min-width: 56px;
+      min-height: 56px;
+      max-width: 56px;
+      max-height: 56px;
+      aspect-ratio: 1 / 1;
       border-radius: 50%;
-      background: var(--green);
-      color: white;
-      display: grid;
-      place-items: center;
-      font-size: 1.2rem;
-      font-weight: 800;
-      box-shadow: 0 6px 18px rgba(45, 114, 91, 0.25);
+      object-fit: cover;
+      object-position: center 20%;
+      flex-shrink: 0;
+      border: 2.5px solid var(--green);
+      box-shadow: 0 4px 14px rgba(45, 114, 91, 0.25);
+      display: block;
+    }
+
+    [data-theme="dark"] .advisor-avatar-lg {
+      border-color: #34d399 !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
     }
 
     .btn-sm {
@@ -383,11 +628,17 @@
 
       <div class="dash-mobile-advisor">
         <small
-          style="color: var(--green); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">YOUR
+          style="color: var(--green); font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">YOUR
           CFP® ADVISOR</small>
-        <strong style="color: var(--ink); display: block; font-size: 0.98rem;">Sarah Johnson, CFP®</strong>
-        <p style="color: var(--muted); font-size: 0.84rem; margin: 4px 0 12px;">Senior Retirement Specialist · Fiduciary
-          Advisory</p>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <img src="sarah.jpg" alt="Sarah Johnson, CFP®" width="48" height="48"
+            style="width: 48px; height: 48px; min-width: 48px; min-height: 48px; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0; border: 2px solid var(--green);"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=85';">
+          <div style="min-width: 0; flex: 1;">
+            <strong style="color: var(--ink); display: block; font-size: 0.98rem;">Sarah Johnson, CFP®</strong>
+            <p style="color: var(--muted); font-size: 0.82rem; margin: 2px 0 0;">Senior Retirement Specialist</p>
+          </div>
+        </div>
         <button type="button" class="btn btn-primary" style="width: 100%; justify-content: center;"
           onclick="showModal('scheduleModal')">📅 Schedule Advisor Review</button>
       </div>
@@ -427,10 +678,17 @@
       <div
         style="margin-top: 40px; padding: 16px; background: rgba(255,255,255,0.05); border-radius: 14px; border: 1px solid rgba(255,255,255,0.08);">
         <small
-          style="color: #72caa9; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 6px;">YOUR
+          style="color: #72caa9; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">YOUR
           CFP® ADVISOR</small>
-        <strong style="color: white; display: block; font-size: 0.95rem;">Sarah Johnson, CFP®</strong>
-        <p style="color: #a4b9b4; font-size: 0.8rem; margin: 4px 0 10px;">Senior Retirement Specialist</p>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <img src="sarah.jpg" alt="Sarah Johnson, CFP®" width="44" height="44"
+            style="width: 44px; height: 44px; min-width: 44px; min-height: 44px; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0; border: 2px solid #72caa9;"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=85';">
+          <div style="min-width: 0; flex: 1;">
+            <strong style="color: white; display: block; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Sarah Johnson, CFP®</strong>
+            <p style="color: #a4b9b4; font-size: 0.78rem; margin: 2px 0 0;">Senior Specialist</p>
+          </div>
+        </div>
         <button type="button" class="btn btn-soft btn-sm"
           style="width: 100%; text-align: center; justify-content: center;" onclick="showModal('scheduleModal')">Book
           Review</button>
@@ -521,11 +779,16 @@
                 <strong style="display: block; font-size: 1.05rem;">$8,450/mo Payouts →</strong>
                 <small style="color: var(--muted);">Social Security, Fixed Annuities & Pension</small>
               </div>
-              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25);"
+              <div class="card" style="padding: 16px; cursor: pointer; border-color: rgba(45,114,91,0.25); display: flex; align-items: center; gap: 14px;"
                 onclick="switchDashTab('advisor')">
-                <div class="eyebrow" style="margin-bottom: 4px;">ADVISOR CORNER</div>
-                <strong style="display: block; font-size: 1.05rem;">Sarah Johnson, CFP® →</strong>
-                <small style="color: var(--muted);">Upcoming Review on Sep 28 & Direct Messaging</small>
+                <img src="sarah.jpg" alt="Sarah Johnson, CFP®" width="44" height="44"
+                  style="width: 44px; height: 44px; min-width: 44px; min-height: 44px; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0; border: 2px solid var(--green);"
+                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=85';">
+                <div style="min-width: 0; flex: 1;">
+                  <div class="eyebrow" style="margin-bottom: 2px;">ADVISOR CORNER</div>
+                  <strong style="display: block; font-size: 1.05rem;">Sarah Johnson, CFP® →</strong>
+                  <small style="color: var(--muted);">Upcoming Review on Sep 28 & Direct Messaging</small>
+                </div>
               </div>
             </div>
           </div>
@@ -566,7 +829,7 @@
         <div class="dash-top">
           <div>
             <div class="eyebrow">RETIREMENT PLANNING & PROJECTIONS</div>
-            <h1 style="font-size: 2.4rem;">30-Year Income Projection Model</h1>
+            <h1 class="dash-title" style="font-size: 2.4rem;">30-Year Income Projection Model</h1>
             <p class="lead">Visualize your guaranteed payouts and variable growth from now through age 90+.</p>
           </div>
         </div>
@@ -580,7 +843,7 @@
             <span class="tag">On Track</span>
           </div>
 
-          <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;">
+          <div class="chart-filter-actions">
             <button class="btn btn-soft btn-sm active" style="border-color: var(--green);"
               onclick="showToast('Showing Consolidated Projection')">Consolidated View</button>
             <button class="btn btn-soft btn-sm"
@@ -590,7 +853,7 @@
           <!-- Interactive Bars Chart -->
           <div class="chart-container">
             <div class="chart-bars-wrap">
-              <div class="chart-col">
+              <div class="chart-col" tabindex="0" role="button" aria-label="Year 2026: $6,200 per month">
                 <div class="chart-tooltip">$6,200/mo · 2026</div>
                 <div class="chart-col-group" style="height: 45%;">
                   <div class="chart-seg-annuity" style="height: 35%;"></div>
@@ -600,7 +863,7 @@
                 <div class="chart-label">2026</div>
               </div>
 
-              <div class="chart-col">
+              <div class="chart-col" tabindex="0" role="button" aria-label="Year 2028: $6,800 per month">
                 <div class="chart-tooltip">$6,800/mo · 2028</div>
                 <div class="chart-col-group" style="height: 52%;">
                   <div class="chart-seg-annuity" style="height: 38%;"></div>
@@ -610,7 +873,7 @@
                 <div class="chart-label">2028</div>
               </div>
 
-              <div class="chart-col">
+              <div class="chart-col" tabindex="0" role="button" aria-label="Year 2030: $7,400 per month">
                 <div class="chart-tooltip">$7,400/mo · 2030</div>
                 <div class="chart-col-group" style="height: 60%;">
                   <div class="chart-seg-annuity" style="height: 40%;"></div>
@@ -620,7 +883,7 @@
                 <div class="chart-label">2030</div>
               </div>
 
-              <div class="chart-col">
+              <div class="chart-col" tabindex="0" role="button" aria-label="Year 2033: $8,100 per month">
                 <div class="chart-tooltip">$8,100/mo · 2033</div>
                 <div class="chart-col-group" style="height: 70%;">
                   <div class="chart-seg-annuity" style="height: 42%;"></div>
@@ -630,7 +893,7 @@
                 <div class="chart-label">2033</div>
               </div>
 
-              <div class="chart-col">
+              <div class="chart-col" tabindex="0" role="button" aria-label="Year 2036 Target: $8,450 per month">
                 <div class="chart-tooltip">$8,450/mo · 2036 (Target)</div>
                 <div class="chart-col-group" style="height: 85%;">
                   <div class="chart-seg-annuity" style="height: 45%;"></div>
@@ -640,7 +903,7 @@
                 <div class="chart-label">2036 ★</div>
               </div>
 
-              <div class="chart-col">
+              <div class="chart-col" tabindex="0" role="button" aria-label="Year 2040: $9,200 per month">
                 <div class="chart-tooltip">$9,200/mo · 2040</div>
                 <div class="chart-col-group" style="height: 92%;">
                   <div class="chart-seg-annuity" style="height: 48%;"></div>
@@ -650,7 +913,7 @@
                 <div class="chart-label">2040</div>
               </div>
 
-              <div class="chart-col">
+              <div class="chart-col" tabindex="0" role="button" aria-label="Year 2045: $10,100 per month">
                 <div class="chart-tooltip">$10,100/mo · 2045</div>
                 <div class="chart-col-group" style="height: 98%;">
                   <div class="chart-seg-annuity" style="height: 50%;"></div>
@@ -663,8 +926,7 @@
           </div>
 
           <!-- Chart Legend -->
-          <div
-            style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; font-size: 0.84rem; flex-wrap: wrap; gap: 10px;">
+          <div class="chart-legend-grid">
             <div style="display: flex; align-items: center; gap: 6px;">
               <span style="width: 12px; height: 12px; border-radius: 3px; background: var(--green);"></span>
               <span>Fixed Lifetime Annuities ($2,250)</span>
@@ -679,8 +941,7 @@
             </div>
           </div>
 
-          <div
-            style="margin-top: 18px; padding: 14px 18px; background: rgba(45,114,91,0.08); border-radius: 14px; border: 1px solid rgba(45,114,91,0.18); font-size: 0.88rem; color: var(--green); font-weight: 600;">
+          <div class="chart-milestone-box">
             💡 <strong>Key Milestone:</strong> Your guaranteed baseline income ($6,650/mo) fully covers 114% of your
             projected core living expenses of $5,800/mo.
           </div>
@@ -894,10 +1155,11 @@
           <h3 style="font-size: 1.5rem; margin-bottom: 6px;">Your Dedicated Specialist</h3>
 
           <div class="advisor-profile-box">
-            <div class="advisor-avatar-lg">SJ</div>
-            <div>
-              <strong style="display: block; font-size: 1.1rem; color: var(--ink);">Sarah Johnson, CFP®</strong>
-              <small style="color: var(--muted);">Senior Retirement & Annuity Specialist · 14 yrs experience</small>
+            <img class="advisor-avatar-lg" src="sarah.jpg" alt="Sarah Johnson, CFP®" width="56" height="56"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=85';">
+            <div style="min-width: 0; flex: 1;">
+              <strong style="display: block; font-size: 1.15rem; color: var(--ink);">Sarah Johnson, CFP®</strong>
+              <small style="color: var(--muted); font-size: 0.88rem; line-height: 1.4; display: block; margin-top: 2px;">Senior Retirement & Annuity Specialist · 14 yrs experience</small>
             </div>
           </div>
 
@@ -1074,8 +1336,18 @@
       <button type="button" class="modal-close" onclick="closeModal('scheduleModal')">✕</button>
       <div class="eyebrow">ADVISOR CALENDAR</div>
       <h2 style="font-size: 1.8rem; margin-bottom: 8px;">Schedule Plan Review</h2>
-      <p style="color: var(--muted); font-size: 0.94rem; margin-bottom: 20px;">Book a 45-minute 1-on-1 virtual
+      <p style="color: var(--muted); font-size: 0.94rem; margin-bottom: 16px;">Book a 45-minute 1-on-1 virtual
         consultation with your dedicated CFP® specialist.</p>
+
+      <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px; padding: 12px 14px; background: var(--cream); border-radius: 14px; border: 1px solid var(--line);">
+        <img src="sarah.jpg" alt="Sarah Johnson, CFP®" width="46" height="46"
+          style="width: 46px; height: 46px; min-width: 46px; min-height: 46px; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover; object-position: center 20%; flex-shrink: 0; border: 2px solid var(--green);"
+          onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=85';">
+        <div style="min-width: 0; flex: 1;">
+          <strong style="color: var(--ink); display: block; font-size: 0.98rem;">Sarah Johnson, CFP®</strong>
+          <small style="color: var(--muted); font-size: 0.82rem;">Senior Retirement & Annuity Specialist · Fiduciary</small>
+        </div>
+      </div>
 
       <form onsubmit="handleScheduleSubmit(event)">
         <div class="field">

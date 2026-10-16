@@ -28,6 +28,36 @@
       margin-bottom: 12px;
     }
 
+    [data-theme="dark"] .section-badge {
+      background: rgba(52, 211, 153, 0.16) !important;
+      color: #34d399 !important;
+      border: 1px solid rgba(52, 211, 153, 0.28);
+    }
+
+    [data-theme="dark"] .feature-check {
+      color: #34d399 !important;
+    }
+
+    [data-theme="dark"] .advisor-img {
+      border-color: #34d399 !important;
+    }
+
+    [data-theme="dark"] .advisor-availability-badge {
+      color: #34d399 !important;
+      background: rgba(52, 211, 153, 0.16) !important;
+      border: 1px solid rgba(52, 211, 153, 0.28) !important;
+    }
+
+    [data-theme="dark"] .advisor-role-title {
+      color: #34d399 !important;
+    }
+
+    [data-theme="dark"] .toolkit-icon-box {
+      background: rgba(52, 211, 153, 0.16) !important;
+      color: #34d399 !important;
+      border: 1px solid rgba(52, 211, 153, 0.28) !important;
+    }
+
     .feature-list {
       display: grid;
       gap: 12px;
@@ -185,9 +215,7 @@
                 <span
                   style="font-weight: 800; font-size: 0.82rem; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase;">FLAGSHIP
                   STRATEGY 01</span>
-                <span class="tag"
-                  style="background: rgba(45, 114, 91, 0.12); color: var(--green); font-size: 0.75rem;">100% PRINCIPAL
-                  GUARANTEE</span>
+                <span class="tag">100% PRINCIPAL GUARANTEE</span>
               </div>
               <h3 style="font-size: 1.65rem; margin-bottom: 12px; line-height: 1.25;">Retirement Income Stream
                 Architecture</h3>
@@ -237,9 +265,7 @@
                   <span
                     style="font-weight: 800; font-size: 0.8rem; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase;">SPECIALIZED
                     STRATEGY 02</span>
-                  <span
-                    style="font-size: 0.78rem; font-weight: 700; color: var(--green); background: rgba(45,114,91,0.1); padding: 4px 10px; border-radius: 6px;">CONTRACT
-                    AUDIT</span>
+                  <span class="tag">CONTRACT AUDIT</span>
                 </div>
                 <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Annuity Contract & Fee Diagnostic</h3>
                 <p style="color: var(--muted); font-size: 0.92rem; line-height: 1.55; margin-bottom: 18px;">
@@ -265,9 +291,7 @@
                   <span
                     style="font-weight: 800; font-size: 0.8rem; color: var(--gold); letter-spacing: 0.08em; text-transform: uppercase;">SPECIALIZED
                     STRATEGY 03</span>
-                  <span
-                    style="font-size: 0.78rem; font-weight: 700; color: var(--green); background: rgba(45,114,91,0.1); padding: 4px 10px; border-radius: 6px;">FAMILY
-                    WEALTH</span>
+                  <span class="tag">FAMILY WEALTH</span>
                 </div>
                 <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Spousal Legacy & Estate Transfer</h3>
                 <p style="color: var(--muted); font-size: 0.92rem; line-height: 1.55; margin-bottom: 18px;">
@@ -362,7 +386,7 @@
           <div class="toolkit-stack-panel">
             <div class="toolkit-download-row">
               <div style="display: flex; align-items: center; gap: 16px;">
-                <div
+                <div class="toolkit-icon-box"
                   style="width: 48px; height: 48px; border-radius: 14px; background: rgba(45,114,91,0.12); color: var(--green); display: grid; place-items: center; font-size: 1.3rem; flex-shrink: 0;">
                   📥
                 </div>
@@ -382,15 +406,13 @@
 
             <div class="toolkit-download-row">
               <div style="display: flex; align-items: center; gap: 16px;">
-                <div
+                <div class="toolkit-icon-box"
                   style="width: 48px; height: 48px; border-radius: 14px; background: rgba(45,114,91,0.12); color: var(--green); display: grid; place-items: center; font-size: 1.3rem; flex-shrink: 0;">
                   🔐
                 </div>
                 <div>
                   <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
-                    <span
-                      style="font-size: 0.75rem; font-weight: 800; color: var(--green); text-transform: uppercase;">256-BIT
-                      ENCRYPTED</span>
+                    <span class="tag" style="font-size: 0.75rem;">256-BIT ENCRYPTED</span>
                   </div>
                   <h4 style="margin: 0 0 4px; font-size: 1.05rem;">Fiduciary Document Vault Blueprint</h4>
                   <p style="margin: 0; color: var(--muted); font-size: 0.85rem;">Secure organization framework for
@@ -432,19 +454,20 @@
         <div class="advisory-council-layout">
           <div class="advisor-executive-profile">
             <img class="advisor-executive-photo"
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=85"
-              alt="Sarah Johnson CFP">
+              src="sarah.jpg"
+              alt="Sarah Johnson CFP"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=85';">
             <div style="flex: 1;">
               <div
                 style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; flex-wrap: wrap; gap: 6px;">
                 <h3 style="margin: 0; font-size: 1.25rem;">Sarah Johnson, CFP®</h3>
-                <span
+                <span class="advisor-availability-badge"
                   style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 700; color: var(--green); background: rgba(45,114,91,0.1); padding: 3px 8px; border-radius: 6px;">
                   <span style="width: 6px; height: 6px; border-radius: 50%; background: #34d399;"></span> Available
                   Tomorrow
                 </span>
               </div>
-              <div style="color: var(--green); font-size: 0.86rem; font-weight: 700; margin-bottom: 10px;">Senior
+              <div class="advisor-role-title" style="color: var(--green); font-size: 0.86rem; font-weight: 700; margin-bottom: 10px;">Senior
                 Retirement Income Specialist</div>
               <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.55; margin-bottom: 18px;">
                 15+ years experience structuring fixed income annuities, pension rollovers, and tax-efficient withdrawal
@@ -466,13 +489,13 @@
               <div
                 style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; flex-wrap: wrap; gap: 6px;">
                 <h3 style="margin: 0; font-size: 1.25rem;">Marcus Vance, CFA</h3>
-                <span
+                <span class="advisor-availability-badge"
                   style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 700; color: var(--green); background: rgba(45,114,91,0.1); padding: 3px 8px; border-radius: 6px;">
                   <span style="width: 6px; height: 6px; border-radius: 50%; background: #34d399;"></span> Available
                   Today
                 </span>
               </div>
-              <div style="color: var(--green); font-size: 0.86rem; font-weight: 700; margin-bottom: 10px;">Annuities &
+              <div class="advisor-role-title" style="color: var(--green); font-size: 0.86rem; font-weight: 700; margin-bottom: 10px;">Annuities &
                 Fixed Income Strategist</div>
               <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.55; margin-bottom: 18px;">
                 Specializes in evaluating carrier statutory balance sheets, rating agency solvency metrics, and
@@ -507,8 +530,7 @@
         <div class="services-diagnostic-cta">
           <div class="diagnostic-grid">
             <div>
-              <div class="eyebrow" style="background: rgba(45,114,91,0.12); color: var(--green);">🩺 COMPLIMENTARY
-                FIDUCIARY AUDIT</div>
+              <div class="eyebrow">🩺 COMPLIMENTARY FIDUCIARY AUDIT</div>
               <h2 style="margin-bottom: 12px;">Request a Fiduciary Contract & Fee Diagnostic</h2>
               <p class="lead" style="margin-bottom: 22px;">
                 Already hold an annuity, IRA, or 401(k)? Our chartered specialists will audit surrender charges, hidden

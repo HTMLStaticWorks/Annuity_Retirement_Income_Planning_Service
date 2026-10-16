@@ -53,6 +53,16 @@
       margin-bottom: 16px;
     }
 
+    [data-theme="dark"] .value-num {
+      background: rgba(52, 211, 153, 0.16) !important;
+      color: #34d399 !important;
+      border: 1px solid rgba(52, 211, 153, 0.28);
+    }
+
+    [data-theme="dark"] .impact-matrix-cell strong {
+      color: #34d399 !important;
+    }
+
     .team-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -287,25 +297,25 @@
           <div class="impact-matrix-grid">
             <div class="impact-matrix-cell">
               <span class="kicker" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);">CAPITAL UNDER PLAN</span>
-              <strong style="font-size: 2.2rem; color: var(--green); display: block; margin: 6px 0 2px;">$2.4B+</strong>
+              <strong class="impact-stat-number" style="font-size: 2.2rem; color: var(--green); display: block; margin: 6px 0 2px;">$2.4B+</strong>
               <small style="color: var(--muted); font-size: 0.85rem;">Consolidated client assets</small>
             </div>
 
             <div class="impact-matrix-cell">
               <span class="kicker" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);">RETIRED HOUSEHOLDS</span>
-              <strong style="font-size: 2.2rem; color: var(--green); display: block; margin: 6px 0 2px;">15,000+</strong>
+              <strong class="impact-stat-number" style="font-size: 2.2rem; color: var(--green); display: block; margin: 6px 0 2px;">15,000+</strong>
               <small style="color: var(--muted); font-size: 0.85rem;">Active income blueprints</small>
             </div>
 
             <div class="impact-matrix-cell">
               <span class="kicker" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);">ANNUAL RETENTION</span>
-              <strong style="font-size: 2.2rem; color: var(--green); display: block; margin: 6px 0 2px;">99.4%</strong>
+              <strong class="impact-stat-number" style="font-size: 2.2rem; color: var(--green); display: block; margin: 6px 0 2px;">99.4%</strong>
               <small style="color: var(--muted); font-size: 0.85rem;">Fiduciary partnership rate</small>
             </div>
 
             <div class="impact-matrix-cell">
               <span class="kicker" style="font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);">SOLVENCY OVERSIGHT</span>
-              <strong style="font-size: 2.2rem; color: var(--green); display: block; margin: 6px 0 2px;">100%</strong>
+              <strong class="impact-stat-number" style="font-size: 2.2rem; color: var(--green); display: block; margin: 6px 0 2px;">100%</strong>
               <small style="color: var(--muted); font-size: 0.85rem;">AM Best A++ reserve filter</small>
             </div>
           </div>

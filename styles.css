@@ -288,9 +288,41 @@ img {
   --muted: #94aaa3;
   --cream: #0c1d23;
   --paper: #132a32;
-  --sage: #1e443b;
+  --sage: rgba(52, 211, 153, 0.14);
   --line: #1d3d35;
+  --green: #34d399;
+  --green-2: #6ee7b7;
+  --green-dark: #236852;
+  --green-badge-bg: rgba(52, 211, 153, 0.16);
+  --green-badge-border: rgba(52, 211, 153, 0.28);
   --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="dark"] .brand-mark {
+  background: #236852 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.25);
+}
+
+[data-theme="dark"] .rate-filter-btn.active,
+[data-theme="dark"] .rate-filter-btn:hover {
+  background: #236852 !important;
+  color: #ffffff !important;
+  border-color: #34d399 !important;
+}
+
+[data-theme="dark"] .tab-btn.active,
+[data-theme="dark"] .tab-btn:hover {
+  background: #236852 !important;
+  color: #ffffff !important;
+  border-color: #34d399 !important;
+}
+
+[data-theme="dark"] .dash-mobile-tabs a.active,
+[data-theme="dark"] .dash-mobile-tabs a:hover {
+  background: #236852 !important;
+  color: #ffffff !important;
+  border-color: #34d399 !important;
 }
 
 [data-theme="dark"] .site-header {
@@ -2078,6 +2110,13 @@ p.lead,
     display: block
   }
 
+  .dash-top h1,
+  .dash-title {
+    font-size: 1.75rem !important;
+    line-height: 1.25;
+    margin: 8px 0 10px;
+  }
+
   .dash-grid,
   .dash-sub-grid {
     grid-template-columns: 1fr !important;
@@ -2705,10 +2744,40 @@ p.lead,
 [data-theme="dark"] .status-badge,
 [data-theme="dark"] .client-badge,
 [data-theme="dark"] .yield-pill,
-[data-theme="dark"] .safety-rating {
+[data-theme="dark"] .safety-rating,
+[data-theme="dark"] .carrier-logo-badge,
+[data-theme="dark"] .advisor-availability-badge,
+[data-theme="dark"] .security-badge,
+[data-theme="dark"] .value-num,
+[data-theme="dark"] .channel-icon,
+[data-theme="dark"] .card-social-btn {
   color: #34d399 !important;
   background: rgba(52, 211, 153, 0.16) !important;
-  border: 1px solid rgba(52, 211, 153, 0.25) !important;
+  border: 1px solid rgba(52, 211, 153, 0.28) !important;
+}
+
+/* Universal Dark Mode Green Text Visibility Enforcement */
+[data-theme="dark"] .advisor-role-title,
+[data-theme="dark"] .feature-check,
+[data-theme="dark"] .forgot-link,
+[data-theme="dark"] .terms-link,
+[data-theme="dark"] .auth-footer a,
+[data-theme="dark"] .impact-matrix-cell strong,
+[data-theme="dark"] .dashboard-green-text,
+[data-theme="dark"] [style*="color: var(--green)"],
+[data-theme="dark"] [style*="color:var(--green)"],
+[data-theme="dark"] [style*="color: #2d725b"],
+[data-theme="dark"] [style*="color:#2d725b"] {
+  color: #34d399 !important;
+}
+
+/* Universal Dark Mode Green Tinted Backgrounds Enhancement */
+[data-theme="dark"] [style*="background: rgba(45, 114, 91"],
+[data-theme="dark"] [style*="background: rgba(45,114,91"],
+[data-theme="dark"] [style*="background:rgba(45,114,91"],
+[data-theme="dark"] [style*="background:rgba(45, 114, 91"] {
+  background: rgba(52, 211, 153, 0.16) !important;
+  border-color: rgba(52, 211, 153, 0.28) !important;
 }
 
 /* Universal Dark Mode Button Hover Contrast Enforcement */
@@ -4040,6 +4109,11 @@ p.lead,
   border-color: #1d3d35;
 }
 
+[data-theme="dark"] .advisor-executive-profile:hover {
+  border-color: #34d399;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
 @media (max-width: 580px) {
   .advisor-executive-profile {
     flex-direction: column;
@@ -4055,6 +4129,10 @@ p.lead,
   object-position: top center;
   flex-shrink: 0;
   border: 2px solid var(--green);
+}
+
+[data-theme="dark"] .advisor-executive-photo {
+  border-color: #34d399;
 }
 
 /* 4. index.html Section 2: High-Impact Clarity Ecosystem Triad */
