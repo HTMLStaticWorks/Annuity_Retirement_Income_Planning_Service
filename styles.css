@@ -24,7 +24,8 @@
 }
 
 html {
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -32,7 +33,16 @@ body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background: var(--cream);
-  line-height: 1.6
+  line-height: 1.6;
+  overflow-x: clip;
+  width: 100%;
+  position: relative;
+}
+
+@supports not (overflow-x: clip) {
+  html, body {
+    overflow-x: hidden;
+  }
 }
 
 a {
@@ -3765,6 +3775,44 @@ p.lead,
   box-shadow: 0 8px 25px rgba(20, 49, 59, 0.04);
 }
 
+.service-next-step-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.service-next-step-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 680px) {
+  .service-next-step-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 18px 16px;
+    margin-top: 20px;
+  }
+
+  .service-next-step-content {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .service-next-step-bar .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    height: auto;
+    min-height: 40px;
+    padding: 10px 16px;
+  }
+}
+
 [data-theme="dark"] .service-next-step-bar {
   background: #132a32;
   border-color: #1d3d35;
@@ -4060,12 +4108,102 @@ p.lead,
   }
 }
 
+@media (max-width: 640px) {
+  .services-flagship-showcase {
+    padding: 22px 16px;
+    border-radius: 20px;
+    gap: 22px;
+  }
+}
+
+.flagship-kicker-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.flagship-kicker-tag {
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.flagship-heading {
+  font-size: 1.65rem;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.flagship-desc {
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.flagship-benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 14px;
+  margin-bottom: 24px;
+}
+
+.flagship-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.flagship-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .flagship-heading {
+    font-size: 1.35rem;
+  }
+  .flagship-benefit-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .flagship-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+  .flagship-actions .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    height: auto;
+    min-height: 42px;
+    padding: 10px 16px;
+  }
+}
+
 .services-flagship-img-wrap {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
   height: 320px;
   box-shadow: 0 16px 40px rgba(20, 49, 59, 0.12);
+}
+
+@media (max-width: 640px) {
+  .services-flagship-img-wrap {
+    height: 220px;
+    border-radius: 16px;
+  }
 }
 
 .services-flagship-img-wrap img {
@@ -4078,6 +4216,10 @@ p.lead,
   position: absolute;
   bottom: 16px;
   left: 16px;
+  right: 16px;
+  max-width: calc(100% - 32px);
+  width: fit-content;
+  box-sizing: border-box;
   background: rgba(19, 42, 50, 0.92);
   color: white;
   padding: 10px 16px;
@@ -4094,6 +4236,17 @@ p.lead,
 [dir="rtl"] .services-flagship-badge {
   left: auto;
   right: 16px;
+}
+
+@media (max-width: 640px) {
+  .services-flagship-badge {
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    max-width: calc(100% - 24px);
+    font-size: 0.76rem;
+    padding: 8px 12px;
+  }
 }
 
 .services-rail-grid {
@@ -4120,6 +4273,23 @@ p.lead,
   position: relative;
 }
 
+.service-console-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.service-console-kicker {
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .service-horizontal-console:hover {
   transform: translateY(-4px);
   border-color: var(--green);
@@ -4133,6 +4303,22 @@ p.lead,
 
 [data-theme="dark"] .service-horizontal-console:hover {
   border-color: #34d399;
+}
+
+@media (max-width: 640px) {
+  .service-horizontal-console {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+  .service-horizontal-console .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    height: auto;
+    min-height: 38px;
+    padding: 8px 14px;
+  }
 }
 
 /* 2. Services Section 2: Interactive Fiduciary Toolkit & Download Station */
@@ -4167,6 +4353,70 @@ p.lead,
 [data-theme="dark"] .toolkit-hero-panel {
   background: linear-gradient(135deg, #09171c 0%, #102720 100%);
   border-color: rgba(52, 211, 153, 0.3);
+}
+
+.toolkit-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.toolkit-stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.toolkit-stat-pill {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.toolkit-stat-pill span {
+  display: block;
+  font-size: 0.75rem;
+  color: #a9c7bf;
+}
+
+.toolkit-stat-pill strong {
+  font-size: 1.05rem;
+  color: white;
+}
+
+.toolkit-hero-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .toolkit-hero-panel {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+  .toolkit-stat-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .toolkit-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .toolkit-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    height: auto;
+    min-height: 42px;
+    padding: 10px 16px;
+  }
 }
 
 .toolkit-stack-panel {
@@ -4207,6 +4457,63 @@ p.lead,
   border-color: #34d399;
 }
 
+.toolkit-download-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.toolkit-download-info {
+  min-width: 0;
+}
+
+.toolkit-download-info h4 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  word-break: break-word;
+}
+
+.toolkit-download-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.toolkit-badge-tag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 680px) {
+  .toolkit-download-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 18px 16px;
+  }
+
+  .toolkit-download-row:hover {
+    transform: none;
+  }
+
+  .toolkit-download-main {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .toolkit-download-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 /* 3. Services Section 3: Executive Advisory Council Suite */
 .advisory-council-layout {
   display: grid;
@@ -4245,6 +4552,70 @@ p.lead,
 [data-theme="dark"] .advisor-executive-profile:hover {
   border-color: #34d399;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.advisor-executive-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.advisor-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.advisor-title-row h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.avail-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  display: inline-block;
+}
+
+.advisor-bio {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.advisor-actions-wrap {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 680px) {
+  .advisor-executive-profile {
+    flex-direction: column;
+    padding: 22px 18px;
+    gap: 18px;
+  }
+
+  .advisor-actions-wrap {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .advisor-actions-wrap .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    height: auto;
+    min-height: 40px;
+    padding: 10px 16px;
+    line-height: 1.35;
+  }
 }
 
 @media (max-width: 580px) {
@@ -4492,4 +4863,157 @@ p.lead,
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+/* ==========================================================================
+   CROSS-PAGE MOBILE VIEWPORT FIT & ZERO-SIDE-SCROLL SAFEGUARDS
+   ========================================================================== */
+
+/* 1. Prevent touch/hover translateX from nudging elements outside viewport on mobile */
+@media (max-width: 768px) {
+  .services-rate-preview-item:hover,
+  .fiduciary-safeguard-item:hover,
+  .philosophy-pillar-row:hover,
+  .toolkit-download-row:hover,
+  .channel-strip-item:hover,
+  .location-station-card:hover {
+    transform: translateY(-2px) !important;
+  }
+}
+
+/* 2. Responsive Flagship metadata grid (index.html) */
+.flagship-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: #a4c0b8;
+}
+
+@media (max-width: 520px) {
+  .flagship-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+/* 3. Global Mobile Card & CTA Padding Refinements */
+@media (max-width: 680px) {
+  .home-flagship-cta {
+    padding: 26px 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .flagship-card {
+    padding: 20px 16px !important;
+    border-radius: 16px !important;
+  }
+
+  .home2-journey-cta {
+    padding: 26px 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .journey-steps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin: 20px 0 24px !important;
+  }
+
+  .journey-bottom-action {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .journey-bottom-action .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .journey-trail-action-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 18px 16px !important;
+    gap: 14px !important;
+  }
+
+  .journey-trail-action-bar .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .about-pledge-cta {
+    padding: 26px 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .fiduciary-manifesto-card {
+    padding: 26px 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .fiduciary-safeguard-item {
+    padding: 16px 16px !important;
+    gap: 14px !important;
+  }
+
+  .gap-calc-card {
+    padding: 22px 18px !important;
+    border-radius: 18px !important;
+  }
+
+  .services-hero-deck {
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .channel-strip-item {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    padding: 18px 16px !important;
+  }
+
+  .channel-strip-item .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+/* 4. Small device safety (< 480px) */
+@media (max-width: 480px) {
+  .page-hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .page-hero-actions .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .services-rate-preview-item {
+    padding: 10px 12px !important;
+    gap: 10px !important;
+  }
+
+  .services-rate-preview-item .yield-pill {
+    font-size: 0.82rem !important;
+    padding: 3px 8px !important;
+  }
+
+  .floating-badge {
+    right: 12px !important;
+    top: 12px !important;
+    padding: 8px 12px !important;
+    font-size: 0.78rem !important;
+  }
+
+  [dir="rtl"] .floating-badge {
+    left: 12px !important;
+    right: auto !important;
+  }
 }
