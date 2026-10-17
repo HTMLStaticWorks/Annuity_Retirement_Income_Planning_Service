@@ -194,13 +194,44 @@
       bottom: 24px;
       left: 24px;
       z-index: 10;
-      background: rgba(19, 42, 50, 0.94);
+      background: rgba(15, 34, 40, 0.95);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(52, 211, 153, 0.35);
       border-radius: 16px;
       padding: 18px 22px;
-      color: white;
+      color: #ffffff;
       max-width: 320px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+    }
+
+    .map-info-card strong,
+    .map-card-title {
+      color: #ffffff !important;
+      font-size: 1.08rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .map-info-card p,
+    .map-card-address {
+      color: #d1e2dc !important;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .map-card-eyebrow,
+    .map-info-card .eyebrow {
+      background: rgba(52, 211, 153, 0.18) !important;
+      color: #34d399 !important;
+      border: 1px solid rgba(52, 211, 153, 0.35) !important;
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      display: inline-block;
+      margin-bottom: 6px;
+      padding: 3px 8px;
+      border-radius: 6px;
     }
 
     /* Toast Notification */
@@ -569,15 +600,14 @@
 
           <!-- Floating Overlay Card on Map -->
           <div class="map-info-card">
-            <div class="eyebrow" style="margin-bottom: 4px;">NATIONAL HEADQUARTERS</div>
-            <strong style="display:block; font-size:1.05rem; color: var(--ink); margin-bottom: 4px;">Retira Advisory
-              Group</strong>
-            <p style="font-size: 0.88rem; color: var(--muted); line-height: 1.4; margin-bottom: 14px;">
+            <div class="eyebrow map-card-eyebrow">NATIONAL HEADQUARTERS</div>
+            <strong class="map-card-title" style="display:block; font-size:1.08rem; color: #ffffff !important; margin-bottom: 4px;">Retira Advisory Group</strong>
+            <p class="map-card-address" style="font-size: 0.88rem; color: #d1e2dc !important; line-height: 1.45; margin-bottom: 14px;">
               75 Rockefeller Plaza, Suite 1400<br>
               New York, NY 10019
             </p>
             <a href="https://maps.google.com/?q=75+Rockefeller+Plaza,+New+York,+NY+10019" target="_blank" rel="noopener"
-              class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;">Get Driving Directions ↗</a>
+              class="btn btn-primary btn-sm" style="width: 100%; justify-content: center; font-weight: 700;">Get Driving Directions ↗</a>
           </div>
         </div>
       </div>
